@@ -952,11 +952,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\toolk\\OneDrive\\Desktop\\新增資料夾 (4)\\AN_NAN_Hospital\\AN_NAN_Hospital.csproj",
-      "projectName": "AN_NAN_Hospital",
-      "projectPath": "C:\\Users\\toolk\\OneDrive\\Desktop\\新增資料夾 (4)\\AN_NAN_Hospital\\AN_NAN_Hospital.csproj",
+      "projectUniqueName": "C:\\Users\\toolk\\OneDrive\\文件\\GitHub\\AN_NA\\AN_NAN_Hospital\\OnCube_Switch.csproj",
+      "projectName": "OnCube_Switch",
+      "projectPath": "C:\\Users\\toolk\\OneDrive\\文件\\GitHub\\AN_NA\\AN_NAN_Hospital\\OnCube_Switch.csproj",
       "packagesPath": "C:\\Users\\toolk\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\toolk\\OneDrive\\Desktop\\新增資料夾 (4)\\AN_NAN_Hospital\\obj\\",
+      "outputPath": "C:\\Users\\toolk\\OneDrive\\文件\\GitHub\\AN_NA\\AN_NAN_Hospital\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
