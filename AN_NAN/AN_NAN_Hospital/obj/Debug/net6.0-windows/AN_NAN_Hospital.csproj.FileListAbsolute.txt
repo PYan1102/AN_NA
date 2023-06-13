@@ -1,0 +1,108 @@
+D:\Users\toolk\source\repos\Sol_01_0524\AN_NAN_Hospital\bin\Debug\net6.0-windows\AN_NAN_Hospital.exe
+D:\Users\toolk\source\repos\Sol_01_0524\AN_NAN_Hospital\bin\Debug\net6.0-windows\AN_NAN_Hospital.deps.json
+D:\Users\toolk\source\repos\Sol_01_0524\AN_NAN_Hospital\bin\Debug\net6.0-windows\AN_NAN_Hospital.runtimeconfig.json
+D:\Users\toolk\source\repos\Sol_01_0524\AN_NAN_Hospital\bin\Debug\net6.0-windows\AN_NAN_Hospital.dll
+D:\Users\toolk\source\repos\Sol_01_0524\AN_NAN_Hospital\bin\Debug\net6.0-windows\AN_NAN_Hospital.pdb
+D:\Users\toolk\source\repos\Sol_01_0524\AN_NAN_Hospital\obj\Debug\net6.0-windows\AN_NAN_Hospital.csproj.AssemblyReference.cache
+D:\Users\toolk\source\repos\Sol_01_0524\AN_NAN_Hospital\obj\Debug\net6.0-windows\AN_NAN_Hospital.Form1.resources
+D:\Users\toolk\source\repos\Sol_01_0524\AN_NAN_Hospital\obj\Debug\net6.0-windows\AN_NAN_Hospital.csproj.GenerateResource.cache
+D:\Users\toolk\source\repos\Sol_01_0524\AN_NAN_Hospital\obj\Debug\net6.0-windows\AN_NAN_Hospital.GeneratedMSBuildEditorConfig.editorconfig
+D:\Users\toolk\source\repos\Sol_01_0524\AN_NAN_Hospital\obj\Debug\net6.0-windows\AN_NAN_Hospital.AssemblyInfoInputs.cache
+D:\Users\toolk\source\repos\Sol_01_0524\AN_NAN_Hospital\obj\Debug\net6.0-windows\AN_NAN_Hospital.AssemblyInfo.cs
+D:\Users\toolk\source\repos\Sol_01_0524\AN_NAN_Hospital\obj\Debug\net6.0-windows\AN_NAN_Hospital.csproj.CoreCompileInputs.cache
+D:\Users\toolk\source\repos\Sol_01_0524\AN_NAN_Hospital\obj\Debug\net6.0-windows\AN_NAN_Hospital.dll
+D:\Users\toolk\source\repos\Sol_01_0524\AN_NAN_Hospital\obj\Debug\net6.0-windows\refint\AN_NAN_Hospital.dll
+D:\Users\toolk\source\repos\Sol_01_0524\AN_NAN_Hospital\obj\Debug\net6.0-windows\AN_NAN_Hospital.pdb
+D:\Users\toolk\source\repos\Sol_01_0524\AN_NAN_Hospital\obj\Debug\net6.0-windows\AN_NAN_Hospital.genruntimeconfig.cache
+D:\Users\toolk\source\repos\Sol_01_0524\AN_NAN_Hospital\obj\Debug\net6.0-windows\ref\AN_NAN_Hospital.dll
+C:\Users\toolk\OneDrive\Desktop\Sol_01_0525\Sol_01_0524\AN_NAN_Hospital\bin\Debug\net6.0-windows\AN_NAN_Hospital.exe
+C:\Users\toolk\OneDrive\Desktop\Sol_01_0525\Sol_01_0524\AN_NAN_Hospital\bin\Debug\net6.0-windows\AN_NAN_Hospital.dll.config
+C:\Users\toolk\OneDrive\Desktop\Sol_01_0525\Sol_01_0524\AN_NAN_Hospital\bin\Debug\net6.0-windows\AN_NAN_Hospital.deps.json
+C:\Users\toolk\OneDrive\Desktop\Sol_01_0525\Sol_01_0524\AN_NAN_Hospital\bin\Debug\net6.0-windows\AN_NAN_Hospital.runtimeconfig.json
+C:\Users\toolk\OneDrive\Desktop\Sol_01_0525\Sol_01_0524\AN_NAN_Hospital\bin\Debug\net6.0-windows\AN_NAN_Hospital.dll
+C:\Users\toolk\OneDrive\Desktop\Sol_01_0525\Sol_01_0524\AN_NAN_Hospital\bin\Debug\net6.0-windows\AN_NAN_Hospital.pdb
+C:\Users\toolk\OneDrive\Desktop\Sol_01_0525\Sol_01_0524\AN_NAN_Hospital\obj\Debug\net6.0-windows\AN_NAN_Hospital.csproj.AssemblyReference.cache
+C:\Users\toolk\OneDrive\Desktop\Sol_01_0525\Sol_01_0524\AN_NAN_Hospital\obj\Debug\net6.0-windows\AN_NAN_Hospital.Form1.resources
+C:\Users\toolk\OneDrive\Desktop\Sol_01_0525\Sol_01_0524\AN_NAN_Hospital\obj\Debug\net6.0-windows\AN_NAN_Hospital.csproj.GenerateResource.cache
+C:\Users\toolk\OneDrive\Desktop\Sol_01_0525\Sol_01_0524\AN_NAN_Hospital\obj\Debug\net6.0-windows\AN_NAN_Hospital.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\toolk\OneDrive\Desktop\Sol_01_0525\Sol_01_0524\AN_NAN_Hospital\obj\Debug\net6.0-windows\AN_NAN_Hospital.AssemblyInfoInputs.cache
+C:\Users\toolk\OneDrive\Desktop\Sol_01_0525\Sol_01_0524\AN_NAN_Hospital\obj\Debug\net6.0-windows\AN_NAN_Hospital.AssemblyInfo.cs
+C:\Users\toolk\OneDrive\Desktop\Sol_01_0525\Sol_01_0524\AN_NAN_Hospital\obj\Debug\net6.0-windows\AN_NAN_Hospital.csproj.CoreCompileInputs.cache
+C:\Users\toolk\OneDrive\Desktop\Sol_01_0525\Sol_01_0524\AN_NAN_Hospital\obj\Debug\net6.0-windows\AN_NAN_Hospital.dll
+C:\Users\toolk\OneDrive\Desktop\Sol_01_0525\Sol_01_0524\AN_NAN_Hospital\obj\Debug\net6.0-windows\refint\AN_NAN_Hospital.dll
+C:\Users\toolk\OneDrive\Desktop\Sol_01_0525\Sol_01_0524\AN_NAN_Hospital\obj\Debug\net6.0-windows\AN_NAN_Hospital.pdb
+C:\Users\toolk\OneDrive\Desktop\Sol_01_0525\Sol_01_0524\AN_NAN_Hospital\obj\Debug\net6.0-windows\AN_NAN_Hospital.genruntimeconfig.cache
+C:\Users\toolk\OneDrive\Desktop\Sol_01_0525\Sol_01_0524\AN_NAN_Hospital\obj\Debug\net6.0-windows\ref\AN_NAN_Hospital.dll
+C:\Users\toolk\OneDrive\Desktop\Sol_01_0525\Sol_01_0524\AN_NAN_Hospital\bin\Debug\net6.0-windows\CsvHelper.dll
+C:\Users\toolk\OneDrive\Desktop\Sol_01_0525\Sol_01_0524\AN_NAN_Hospital\obj\Debug\net6.0-windows\AN_NAN_Hospital.csproj.CopyComplete
+C:\Users\USER\Desktop\0524\Sol_01_0524\AN_NAN_Hospital\bin\Debug\net6.0-windows\AN_NAN_Hospital.exe
+C:\Users\USER\Desktop\0524\Sol_01_0524\AN_NAN_Hospital\bin\Debug\net6.0-windows\AN_NAN_Hospital.dll.config
+C:\Users\USER\Desktop\0524\Sol_01_0524\AN_NAN_Hospital\bin\Debug\net6.0-windows\AN_NAN_Hospital.deps.json
+C:\Users\USER\Desktop\0524\Sol_01_0524\AN_NAN_Hospital\bin\Debug\net6.0-windows\AN_NAN_Hospital.runtimeconfig.json
+C:\Users\USER\Desktop\0524\Sol_01_0524\AN_NAN_Hospital\bin\Debug\net6.0-windows\AN_NAN_Hospital.dll
+C:\Users\USER\Desktop\0524\Sol_01_0524\AN_NAN_Hospital\bin\Debug\net6.0-windows\AN_NAN_Hospital.pdb
+C:\Users\USER\Desktop\0524\Sol_01_0524\AN_NAN_Hospital\bin\Debug\net6.0-windows\CsvHelper.dll
+C:\Users\USER\Desktop\0524\Sol_01_0524\AN_NAN_Hospital\obj\Debug\net6.0-windows\AN_NAN_Hospital.csproj.AssemblyReference.cache
+C:\Users\USER\Desktop\0524\Sol_01_0524\AN_NAN_Hospital\obj\Debug\net6.0-windows\AN_NAN_Hospital.Form1.resources
+C:\Users\USER\Desktop\0524\Sol_01_0524\AN_NAN_Hospital\obj\Debug\net6.0-windows\AN_NAN_Hospital.csproj.GenerateResource.cache
+C:\Users\USER\Desktop\0524\Sol_01_0524\AN_NAN_Hospital\obj\Debug\net6.0-windows\AN_NAN_Hospital.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USER\Desktop\0524\Sol_01_0524\AN_NAN_Hospital\obj\Debug\net6.0-windows\AN_NAN_Hospital.AssemblyInfoInputs.cache
+C:\Users\USER\Desktop\0524\Sol_01_0524\AN_NAN_Hospital\obj\Debug\net6.0-windows\AN_NAN_Hospital.AssemblyInfo.cs
+C:\Users\USER\Desktop\0524\Sol_01_0524\AN_NAN_Hospital\obj\Debug\net6.0-windows\AN_NAN_Hospital.csproj.CoreCompileInputs.cache
+C:\Users\USER\Desktop\0524\Sol_01_0524\AN_NAN_Hospital\obj\Debug\net6.0-windows\AN_NAN_Hospital.csproj.CopyComplete
+C:\Users\USER\Desktop\0524\Sol_01_0524\AN_NAN_Hospital\obj\Debug\net6.0-windows\AN_NAN_Hospital.dll
+C:\Users\USER\Desktop\0524\Sol_01_0524\AN_NAN_Hospital\obj\Debug\net6.0-windows\refint\AN_NAN_Hospital.dll
+C:\Users\USER\Desktop\0524\Sol_01_0524\AN_NAN_Hospital\obj\Debug\net6.0-windows\AN_NAN_Hospital.pdb
+C:\Users\USER\Desktop\0524\Sol_01_0524\AN_NAN_Hospital\obj\Debug\net6.0-windows\AN_NAN_Hospital.genruntimeconfig.cache
+C:\Users\USER\Desktop\0524\Sol_01_0524\AN_NAN_Hospital\obj\Debug\net6.0-windows\ref\AN_NAN_Hospital.dll
+C:\Users\USER\Desktop\0524\Sol_01_0524\AN_NAN_Hospital\bin\Debug\net6.0-windows\System.Text.Encoding.CodePages.dll
+C:\Users\USER\Desktop\0524\Sol_01_0524\AN_NAN_Hospital\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Text.Encoding.CodePages.dll
+C:\Users\toolk\OneDrive\Desktop\Sol_01_0525\Sol_01_0524\AN_NAN_Hospital\bin\Debug\net6.0-windows\System.Text.Encoding.CodePages.dll
+C:\Users\toolk\OneDrive\Desktop\Sol_01_0525\Sol_01_0524\AN_NAN_Hospital\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Text.Encoding.CodePages.dll
+C:\Users\toolk\OneDrive\Desktop\Sol_01_0525\Sol_01_0524\AN_NAN_Hospital\bin\Debug\net6.0-windows\Text.UTF8.Legacy.dll
+C:\Users\USER\Desktop\新增資料夾 (11)\AN_NAN_Hospital\bin\Debug\net6.0-windows\AN_NAN_Hospital.exe
+C:\Users\USER\Desktop\新增資料夾 (11)\AN_NAN_Hospital\bin\Debug\net6.0-windows\AN_NAN_Hospital.dll.config
+C:\Users\USER\Desktop\新增資料夾 (11)\AN_NAN_Hospital\bin\Debug\net6.0-windows\AN_NAN_Hospital.deps.json
+C:\Users\USER\Desktop\新增資料夾 (11)\AN_NAN_Hospital\bin\Debug\net6.0-windows\AN_NAN_Hospital.runtimeconfig.json
+C:\Users\USER\Desktop\新增資料夾 (11)\AN_NAN_Hospital\bin\Debug\net6.0-windows\AN_NAN_Hospital.dll
+C:\Users\USER\Desktop\新增資料夾 (11)\AN_NAN_Hospital\bin\Debug\net6.0-windows\AN_NAN_Hospital.pdb
+C:\Users\USER\Desktop\新增資料夾 (11)\AN_NAN_Hospital\bin\Debug\net6.0-windows\CsvHelper.dll
+C:\Users\USER\Desktop\新增資料夾 (11)\AN_NAN_Hospital\bin\Debug\net6.0-windows\System.Text.Encoding.CodePages.dll
+C:\Users\USER\Desktop\新增資料夾 (11)\AN_NAN_Hospital\bin\Debug\net6.0-windows\Text.UTF8.Legacy.dll
+C:\Users\USER\Desktop\新增資料夾 (11)\AN_NAN_Hospital\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Text.Encoding.CodePages.dll
+C:\Users\USER\Desktop\新增資料夾 (11)\AN_NAN_Hospital\obj\Debug\net6.0-windows\AN_NAN_Hospital.csproj.AssemblyReference.cache
+C:\Users\USER\Desktop\新增資料夾 (11)\AN_NAN_Hospital\obj\Debug\net6.0-windows\AN_NAN_Hospital.csproj.GenerateResource.cache
+C:\Users\USER\Desktop\新增資料夾 (11)\AN_NAN_Hospital\obj\Debug\net6.0-windows\AN_NAN_Hospital.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USER\Desktop\新增資料夾 (11)\AN_NAN_Hospital\obj\Debug\net6.0-windows\AN_NAN_Hospital.AssemblyInfoInputs.cache
+C:\Users\USER\Desktop\新增資料夾 (11)\AN_NAN_Hospital\obj\Debug\net6.0-windows\AN_NAN_Hospital.AssemblyInfo.cs
+C:\Users\USER\Desktop\新增資料夾 (11)\AN_NAN_Hospital\obj\Debug\net6.0-windows\AN_NAN_Hospital.csproj.CoreCompileInputs.cache
+C:\Users\USER\Desktop\新增資料夾 (11)\AN_NAN_Hospital\obj\Debug\net6.0-windows\AN_NAN_Hospital.csproj.CopyComplete
+C:\Users\USER\Desktop\新增資料夾 (11)\AN_NAN_Hospital\obj\Debug\net6.0-windows\AN_NAN_Hospital.dll
+C:\Users\USER\Desktop\新增資料夾 (11)\AN_NAN_Hospital\obj\Debug\net6.0-windows\refint\AN_NAN_Hospital.dll
+C:\Users\USER\Desktop\新增資料夾 (11)\AN_NAN_Hospital\obj\Debug\net6.0-windows\AN_NAN_Hospital.pdb
+C:\Users\USER\Desktop\新增資料夾 (11)\AN_NAN_Hospital\obj\Debug\net6.0-windows\AN_NAN_Hospital.genruntimeconfig.cache
+C:\Users\USER\Desktop\新增資料夾 (11)\AN_NAN_Hospital\obj\Debug\net6.0-windows\ref\AN_NAN_Hospital.dll
+C:\Users\USER\Desktop\新增資料夾 (11)\AN_NAN_Hospital\obj\Debug\net6.0-windows\OnCube_Switch.Form1.resources
+C:\Users\toolk\OneDrive\Desktop\新增資料夾 (4)\AN_NAN_Hospital\bin\Debug\net6.0-windows\AN_NAN_Hospital.exe
+C:\Users\toolk\OneDrive\Desktop\新增資料夾 (4)\AN_NAN_Hospital\bin\Debug\net6.0-windows\AN_NAN_Hospital.dll.config
+C:\Users\toolk\OneDrive\Desktop\新增資料夾 (4)\AN_NAN_Hospital\bin\Debug\net6.0-windows\AN_NAN_Hospital.deps.json
+C:\Users\toolk\OneDrive\Desktop\新增資料夾 (4)\AN_NAN_Hospital\bin\Debug\net6.0-windows\AN_NAN_Hospital.runtimeconfig.json
+C:\Users\toolk\OneDrive\Desktop\新增資料夾 (4)\AN_NAN_Hospital\bin\Debug\net6.0-windows\AN_NAN_Hospital.dll
+C:\Users\toolk\OneDrive\Desktop\新增資料夾 (4)\AN_NAN_Hospital\bin\Debug\net6.0-windows\AN_NAN_Hospital.pdb
+C:\Users\toolk\OneDrive\Desktop\新增資料夾 (4)\AN_NAN_Hospital\bin\Debug\net6.0-windows\CsvHelper.dll
+C:\Users\toolk\OneDrive\Desktop\新增資料夾 (4)\AN_NAN_Hospital\bin\Debug\net6.0-windows\System.Text.Encoding.CodePages.dll
+C:\Users\toolk\OneDrive\Desktop\新增資料夾 (4)\AN_NAN_Hospital\bin\Debug\net6.0-windows\Text.UTF8.Legacy.dll
+C:\Users\toolk\OneDrive\Desktop\新增資料夾 (4)\AN_NAN_Hospital\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Text.Encoding.CodePages.dll
+C:\Users\toolk\OneDrive\Desktop\新增資料夾 (4)\AN_NAN_Hospital\obj\Debug\net6.0-windows\AN_NAN_Hospital.csproj.AssemblyReference.cache
+C:\Users\toolk\OneDrive\Desktop\新增資料夾 (4)\AN_NAN_Hospital\obj\Debug\net6.0-windows\OnCube_Switch.Form1.resources
+C:\Users\toolk\OneDrive\Desktop\新增資料夾 (4)\AN_NAN_Hospital\obj\Debug\net6.0-windows\AN_NAN_Hospital.csproj.GenerateResource.cache
+C:\Users\toolk\OneDrive\Desktop\新增資料夾 (4)\AN_NAN_Hospital\obj\Debug\net6.0-windows\AN_NAN_Hospital.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\toolk\OneDrive\Desktop\新增資料夾 (4)\AN_NAN_Hospital\obj\Debug\net6.0-windows\AN_NAN_Hospital.AssemblyInfoInputs.cache
+C:\Users\toolk\OneDrive\Desktop\新增資料夾 (4)\AN_NAN_Hospital\obj\Debug\net6.0-windows\AN_NAN_Hospital.AssemblyInfo.cs
+C:\Users\toolk\OneDrive\Desktop\新增資料夾 (4)\AN_NAN_Hospital\obj\Debug\net6.0-windows\AN_NAN_Hospital.csproj.CoreCompileInputs.cache
+C:\Users\toolk\OneDrive\Desktop\新增資料夾 (4)\AN_NAN_Hospital\obj\Debug\net6.0-windows\AN_NAN_Hospital.csproj.CopyComplete
+C:\Users\toolk\OneDrive\Desktop\新增資料夾 (4)\AN_NAN_Hospital\obj\Debug\net6.0-windows\AN_NAN_Hospital.dll
+C:\Users\toolk\OneDrive\Desktop\新增資料夾 (4)\AN_NAN_Hospital\obj\Debug\net6.0-windows\refint\AN_NAN_Hospital.dll
+C:\Users\toolk\OneDrive\Desktop\新增資料夾 (4)\AN_NAN_Hospital\obj\Debug\net6.0-windows\AN_NAN_Hospital.pdb
+C:\Users\toolk\OneDrive\Desktop\新增資料夾 (4)\AN_NAN_Hospital\obj\Debug\net6.0-windows\AN_NAN_Hospital.genruntimeconfig.cache
+C:\Users\toolk\OneDrive\Desktop\新增資料夾 (4)\AN_NAN_Hospital\obj\Debug\net6.0-windows\ref\AN_NAN_Hospital.dll
