@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace OnCube_Switch.Properties {
+namespace AN_NAN_Hospital.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

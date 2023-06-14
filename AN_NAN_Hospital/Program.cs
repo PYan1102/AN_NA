@@ -1,4 +1,4 @@
-namespace OnCube_Switch
+namespace AN_NAN_Hospital
 {
     internal static class Program
     {

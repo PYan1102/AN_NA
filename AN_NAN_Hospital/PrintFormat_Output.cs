@@ -1,11 +1,10 @@
 ﻿using System.Text;
-using static OnCube_Switch.Check_Content;
+using static AN_NAN_Hospital.Check_Content;
 
-namespace OnCube_Switch
+namespace AN_NAN_Hospital
 {
     /*
-     * 創建一個txt檔案
-     * 讀取存在OnCube暫存欄位的資料,依序依照邏輯輸出
+     * 
      * 
      * 
      *      
@@ -16,24 +15,15 @@ namespace OnCube_Switch
         
 
 
-        
+        static DateTime now = DateTime.Now;
+        static string dateString = now.ToString(("yyyy-MM-dd HHmmss"));
+        private static string _outputPath = $@"{Settings.OutputPath}/測試TXT檔{dateString}.txt";
 
 
         //打印格式涵式: 拿這個LIST之中所有類別出來
         public static void An_nan_print(List<Person_OC> datas)   
         {
-
-
-            DateTime now = DateTime.Now;
-             string dateString = now.ToString(("yyyy-MM-dd HHmmss"));
-         string _outputPath = $@"{Settings.OutputPath}/測試TXT檔{dateString}.txt";
-
-
-
-
-
-
-           var encoding = CodePagesEncodingProvider.Instance.GetEncoding("big5")!;
+            var encoding = CodePagesEncodingProvider.Instance.GetEncoding("big5")!;
             using var writer = new StreamWriter(_outputPath, false, encoding);
             StringBuilder sb = new StringBuilder();
             foreach (var v in datas)
@@ -80,8 +70,6 @@ namespace OnCube_Switch
                 //醫院名稱
                 sb.Append(ECD(v.Hospital_Name,OnCubeFormatLength.Hospital_Name));
 
-
-                //每行30ch
                 sb.Append(v.Random_1.PadRight(OnCubeFormatLength.Random_1));
                 sb.Append(v.Random_2.PadRight(OnCubeFormatLength.Random_2));
                 sb.Append(v.Random_3.PadRight(OnCubeFormatLength.Random_3));
@@ -106,47 +94,6 @@ namespace OnCube_Switch
             //MessageBox.Show("轉檔成功");
            
         }
-
-
-         
-        public static string ECD(string chine, int Length)  //處理中文
-        {
-
-            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
-            Encoding big5 = Encoding.GetEncoding(950);
-
-            string data = chine.PadRight(Length,' ');
-            byte[] Temp = big5.GetBytes(data);
-            return big5.GetString(Temp, 0, Length);
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-        /*
-
-
-         public static string covertToBig5(string str, int len)       //轉成big5
-        {
-            byte[] strBytes = Encoding.GetEncoding("950").GetBytes(str);
-            string big5Str = Encoding.GetEncoding("950").GetString(strBytes, 0, len);
-            return big5Str;
-        }
-
-
-
-
-
-
-
 
 
 
@@ -190,7 +137,27 @@ namespace OnCube_Switch
             return result;
         }
 
-        */
+
+         
+        public static string ECD(string chine, int Length)  //處理中文
+        {
+
+            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+            Encoding big5 = Encoding.GetEncoding(950);
+
+            string data = chine.PadRight(Length,' ');
+            byte[] Temp = big5.GetBytes(data);
+            return big5.GetString(Temp, 0, Length);
+        }
+
+
+        public static string covertToBig5(string str, int len)       //轉成big5
+        {
+            byte[] strBytes = Encoding.GetEncoding("950").GetBytes(str);
+            string big5Str = Encoding.GetEncoding("950").GetString(strBytes, 0, len);
+            return big5Str;
+        }
+
 
     }
 }

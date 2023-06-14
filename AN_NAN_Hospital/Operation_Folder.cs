@@ -1,7 +1,7 @@
-﻿using static OnCube_Switch.Check_Content;
+﻿using static AN_NAN_Hospital.Check_Content;
 //using CsvHelper;
 
-namespace OnCube_Switch
+namespace AN_NAN_Hospital
 {
     internal class Operation_Folder
     {

@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\toolk\\OneDrive\\文件\\GitHub\\AN_NA\\AN_NAN_Hospital\\AN_NAN_Hospital.csproj": {}
+    "C:\\Users\\USER\\Desktop\\新增資料夾 (11)\\AN_NAN_Hospital\\AN_NAN_Hospital.csproj": {}
   },
   "projects": {
-    "C:\\Users\\toolk\\OneDrive\\文件\\GitHub\\AN_NA\\AN_NAN_Hospital\\AN_NAN_Hospital.csproj": {
+    "C:\\Users\\USER\\Desktop\\新增資料夾 (11)\\AN_NAN_Hospital\\AN_NAN_Hospital.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\toolk\\OneDrive\\文件\\GitHub\\AN_NA\\AN_NAN_Hospital\\AN_NAN_Hospital.csproj",
+        "projectUniqueName": "C:\\Users\\USER\\Desktop\\新增資料夾 (11)\\AN_NAN_Hospital\\AN_NAN_Hospital.csproj",
         "projectName": "AN_NAN_Hospital",
-        "projectPath": "C:\\Users\\toolk\\OneDrive\\文件\\GitHub\\AN_NA\\AN_NAN_Hospital\\AN_NAN_Hospital.csproj",
-        "packagesPath": "C:\\Users\\toolk\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\toolk\\OneDrive\\文件\\GitHub\\AN_NA\\AN_NAN_Hospital\\obj\\",
+        "projectPath": "C:\\Users\\USER\\Desktop\\新增資料夾 (11)\\AN_NAN_Hospital\\AN_NAN_Hospital.csproj",
+        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\USER\\Desktop\\新增資料夾 (11)\\AN_NAN_Hospital\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\toolk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -84,7 +85,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

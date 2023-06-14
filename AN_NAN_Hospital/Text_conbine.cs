@@ -2,10 +2,10 @@
 using System.Diagnostics;
 using System.Globalization;
 using System.Text;
-using static OnCube_Switch.AN_NAN_CSV_People;
-using static OnCube_Switch.Check_Content;
+using static AN_NAN_Hospital.CSV_People;
+using static AN_NAN_Hospital.Check_Content;
 
-namespace OnCube_Switch
+namespace AN_NAN_Hospital
 {
     internal class Text_conbine
     {

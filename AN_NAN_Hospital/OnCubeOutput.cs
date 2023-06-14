@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace OnCube_Switch
+namespace AN_NAN_Hospital
 {
     internal class OnCubeOutput
     {

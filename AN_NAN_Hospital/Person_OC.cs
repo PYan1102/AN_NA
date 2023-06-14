@@ -1,8 +1,8 @@
-﻿namespace OnCube_Switch;
+﻿namespace AN_NAN_Hospital;
 
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
-using static OnCube_Switch.PrintFormat_Output;
+using static AN_NAN_Hospital.PrintFormat_Output;
 
 
 

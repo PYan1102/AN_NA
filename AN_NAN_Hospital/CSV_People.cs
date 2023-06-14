@@ -1,12 +1,12 @@
 ﻿using CsvHelper.Configuration.Attributes;
 
-namespace OnCube_Switch
+namespace AN_NAN_Hospital
 {
-    internal class AN_NAN_CSV_People
+    internal class CSV_People
     {
         /*
-         * Define:
-         * 放安南醫院給的CSV檔案欄位
+         * Define:放安南醫院給的CSV檔案欄位
+         * 
          * 
          * 主要給Text_conbine 用的Entity
          * 串流讀一讀，用CsvHelper去分類這樣

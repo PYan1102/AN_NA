@@ -1,11 +1,10 @@
 ﻿using CsvHelper;
-using OnCube_Switch.Properties;
 using System.Diagnostics;
 using System.Globalization;
 using System.Text;
-using static OnCube_Switch.AN_NAN_CSV_People;
+using static AN_NAN_Hospital.CSV_People;
 
-namespace OnCube_Switch
+namespace AN_NAN_Hospital
 {
     internal class AN_NAN_RW
     {
@@ -50,23 +49,9 @@ namespace OnCube_Switch
          * 
          * 
          * 
-         * 
-         * 
          */
-
-        public string sourceFilePath = "";
         public void RW_file()   //讀取每個檔案資料  
         {
-            DateTime now = DateTime.Now;
-
-            string DateTimeString = now.ToString(("yyyy-MM-dd HHmmss"));
-
-            string DateString = now.ToString("yyyyMMdd");
-
-
-
-
-            string folderPath = $"{Settings.OutputPath}/{DateString}";  //輸出資料夾位置
 
 
 
@@ -83,126 +68,99 @@ namespace OnCube_Switch
 
 
 
-            if (!Directory.Exists(folderPath))
-            {
-                // 創建新的資料夾
-                Directory.CreateDirectory(folderPath);
-            }
-
-            string destinationFolderPath = $"{folderPath}";
 
 
 
 
             foreach (var v in Folder_file)   //##############################"依序"拿出一個檔案
             {
+                          
+                var encoding = CodePagesEncodingProvider.Instance.GetEncoding("big5")!;
+                
+                using var reader = new StreamReader(v, encoding);
 
-                sourceFilePath = $"{v}";
-
-
+                using var csv = new CsvReader(reader, CultureInfo.InvariantCulture);
+                
+                    var records = csv.GetRecords<Entity>();
 
                 List<Person_OC> people = new List<Person_OC>();
 
-
-                var encoding = CodePagesEncodingProvider.Instance.GetEncoding("big5")!;
-
-                using var reader = new StreamReader(v, encoding);
+                foreach (var An_nan in records)  //把一個文件中，每一行(即成員)依序個別拿出
                 {
-                    using var csv = new CsvReader(reader, CultureInfo.InvariantCulture);
+
+                    /*
+
+                    //過濾不設定的條件
+                    if (An_nan.Qmedicine == "科學中藥" || !An_nan.Qusage.EndsWith('#') || (An_nan.Qway != "口服" && An_nan.Qway != "PO"))
                     {
-                        {
-                            var records = csv.GetRecords<Entity>();
-
-
-
-                            foreach (var An_nan in records)  //把一個文件中，每一行(即成員)依序個別拿出
-                            {
-
-                                /*
-
-                                //過濾不設定的條件
-                                if (An_nan.Qmedicine == "科學中藥" || !An_nan.Qusage.EndsWith('#') || (An_nan.Qway != "口服" && An_nan.Qway != "PO"))
-                                {
-                                    continue;
-                                }
-
-                                */
-
-
-                                Person_OC preson = new Person_OC()
-                                {
-
-                                    Patient_Name = An_nan.Name,
-
-                                    Patient_ID = An_nan.PatientID.Replace(" ", ""),
-
-                                    Patient_Location = An_nan.HospNo,
-
-                                    Quantity = "1",
-
-                                    Drug_Code = An_nan.DrugID,
-
-                                    Medicine_Name = An_nan.Qmedicine,
-
-                                    Admin_Time = "QD",
-
-                                    Start_Date = "240605",             //An_nan.Qstartdate,
-
-                                    Stop_Date = "240607",              //An_nan.Qenddate,
-
-                                    BirthDay = "2023-06-05",
-
-                                    Sex = "男",
-
-                                    UnitDose_State = "0",
-
-                                    Hospital_Name = "安南醫院",
-
-                                    Dose_Type = "M"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                };
-
-                                //創建OnCube的一個類別
-                                //把安南對應到OnCube的格子屬性區
-                                people.Add(preson);  //加到people類別串列之中  (OnCube)
-
-                            }
-
-                            Thread.Sleep(1000);  //暫停一下  不然每個txt檔案名稱都會一樣 因為我用時間來去定義名稱
-                        }
-                        PrintFormat_Output.An_nan_print(people);  //全部用完，用輸出的涵式去輸出
-
-
-
-
-                       
+                        continue;
                     }
 
+                    */
+
+
+                    Person_OC preson = new Person_OC()
+                    {
+
+                        Patient_Name = An_nan.Name,
+
+                        Patient_ID = An_nan.PatientID.Replace(" ", ""),
+
+                        Patient_Location =An_nan.HospNo,
+
+                        Quantity ="1",  
+
+                        Drug_Code = An_nan.DrugID,
+
+                        Medicine_Name =An_nan.Qmedicine,
+
+                        Admin_Time ="QD",  
+
+                        Start_Date = "240605",             //An_nan.Qstartdate,
+
+                        Stop_Date = "240607",              //An_nan.Qenddate,
+
+                        BirthDay = "2023-06-05",
+
+                        Sex = "男",
+
+                        UnitDose_State="0",
+
+                        Hospital_Name="安南醫院",
+
+                        Dose_Type="M"
+
+
+
+
+
+                        
+                        
+
+                        
+
+                       
+
+                        
+
+
+
+                    };  
+                    
+                    //創建OnCube的一個類別
+                    //把安南對應到OnCube的格子屬性區
+                    people.Add(preson);  //加到people類別串列之中  (OnCube)
+
+
                 }
-
-
-                string destinationFilePath = Path.Combine(destinationFolderPath, Path.GetFileName(sourceFilePath));
-
-                File.Move(sourceFilePath, destinationFilePath);
+                PrintFormat_Output.An_nan_print(people);  //全部用完，用輸出的涵式去輸出
+             
+                
             }
         }
     }
 }
+
 
 
 

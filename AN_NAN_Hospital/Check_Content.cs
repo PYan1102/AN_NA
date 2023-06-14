@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
-namespace OnCube_Switch
+namespace AN_NAN_Hospital
 {
     /*
      * Define:檢查的功能都在這
@@ -28,8 +28,6 @@ namespace OnCube_Switch
             }
             
         }
-
-        
         
     }
 }

@@ -1,6 +1,6 @@
 using System.Diagnostics;
 
-namespace OnCube_Switch
+namespace AN_NAN_Hospital
 {
     public partial class Form1 : Form  //主程式區
     {
@@ -119,7 +119,7 @@ namespace OnCube_Switch
             catch (IOException ex)
             {
                 Debug.WriteLine(ex.ToString());
-              //  MessageBox.Show("請確認檔案是否正在被開啟，系統無法存取");
+                MessageBox.Show("請確認檔案是否正在被開啟，系統無法存取");
             }
 
             catch (Exception ex)
