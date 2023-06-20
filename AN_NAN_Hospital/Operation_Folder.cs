@@ -17,11 +17,6 @@ namespace OnCube_Switch
 
        public string[] Read_Folder()       //讀取資料夾內檔案，並把每個檔案個路徑用array儲存
         {
-
-
-
-
-
             string Folder_In = Settings.InputPath;      //把讀取資料料夾給他
             string[] CSV_files = Directory.GetFiles(Folder_In, "*.csv");   //找所有的Csv檔案
             CsvfileCheck(CSV_files);

@@ -13,9 +13,6 @@ namespace OnCube_Switch
          * 主要"安南醫院"讀取和寫入邏輯在這裡
          * 
          * 
-         * 
-         * 
-         * 
          * １.拿取檔案資料夾讀好的陣列
          * ２.從陣列之中，用foreach依序拿走檔案位址
          * ３.設定輸出地點，由預設暫存內取得指定OutputPath                     Note:之後可能要設定多個命名方式，以防止覆蓋
@@ -38,20 +35,7 @@ namespace OnCube_Switch
          * 讀CSV之後，設定給CSV_People的屬性
          * 然後在新增一個CsvReader，用於讀取 CSV 檔案的資料行，
          * 
-         * 
-         * 
-         * 
-         * 
-         * 
-         * 
-         * 
-         * 
-         * 
-         * 
-         * 
-         * 
-         * 
-         * 
+
          */
 
         public string sourceFilePath = "";
@@ -63,25 +47,11 @@ namespace OnCube_Switch
 
             string DateString = now.ToString("yyyyMMdd");
 
-
-
-
             string folderPath = $"{Settings.OutputPath}/{DateString}";  //輸出資料夾位置
-
-
-
 
             Operation_Folder ttttt = new Operation_Folder();
 
-
-
-
-
-
-
             string[] Folder_file = ttttt.Read_Folder();       //######################檔案位置陣列
-
-
 
             if (!Directory.Exists(folderPath))
             {
@@ -91,18 +61,12 @@ namespace OnCube_Switch
 
             string destinationFolderPath = $"{folderPath}";
 
-
-
-
             foreach (var v in Folder_file)   //##############################"依序"拿出一個檔案
             {
 
                 sourceFilePath = $"{v}";
 
-
-
                 List<Person_OC> people = new List<Person_OC>();
-
 
                 var encoding = CodePagesEncodingProvider.Instance.GetEncoding("big5")!;
 
@@ -159,22 +123,6 @@ namespace OnCube_Switch
                                     Hospital_Name = "安南醫院",
 
                                     Dose_Type = "M"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                                 };
 
                                 //創建OnCube的一個類別
@@ -186,11 +134,6 @@ namespace OnCube_Switch
                             Thread.Sleep(1000);  //暫停一下  不然每個txt檔案名稱都會一樣 因為我用時間來去定義名稱
                         }
                         PrintFormat_Output.An_nan_print(people);  //全部用完，用輸出的涵式去輸出
-
-
-
-
-                       
                     }
 
                 }
@@ -204,71 +147,5 @@ namespace OnCube_Switch
     }
 }
 
-
-
-
-
-
-
-/*
- *    //foreach (var item in ) //依序從people"類別串列"之中拿出剛剛加到裡面的類別。
-                //{
-                //    string result =   //宣告一個字串，放OnCube列印格式
-
-                //    writer.WriteLine(result);   //輸出一行
- * 
- * 
- * 
- * 
- * 
-                     * 
-                     * 此區先放著，因為安南醫院丟出來會呈現"????"
-                     * 
-                    string text = "安南醫院";
-
-                    byte[] encodedBytes = Encoding.GetEncoding("ISO-8859-1").GetBytes(text);
-
-                    preson.Patient_Location = Encoding.GetEncoding("ISO-8859-1").GetString(encodedBytes);
-                    */
-
-
-
-//writer.WriteLine($"{record.PatientID} {record.Name} {record.HospNoDisplay}{record.HospNo}{record.Date}{record.DrugID}{record.Qmedicine}{record.Qsource}{record.Qeffect}{record.Qusage}{record.Qdose}{record.Qdoseq}{record.Qway}{record.Qmedtime}{record.Qmedday}{record.Qfreq}{record.Qmedfreq}{record.Qstartdate}{record.Qenddate}{record.Qtype}{record.Qtypea}{record.Order}{record.Qfiller}");
-
-
-
-/*   
- *   preson.Drug Code= record.
-preson.Medicine Name= record.
-preson.Admin Time= record.
-preson.Start Date= record.
-preson.Stop Date= record.
-preson.Note= record.
-preson.Admin Time description= record.
-preson.Prescription Number= record.
-preson.English Patient Name= record.
-preson.BirthDay= record.
-preson.Sex= record.
-preson.Room Number= record.
-preson.Bed Number= record.
-preson.UnitDose State= record.
-preson.Hospital Name= record.
-preson.Random 1= record.
-preson.Random 2= record.
-preson.Random 3= record.
-preson.Random 4= record.
-preson.Random 5= record.
-preson.Random 6= record.
-preson.Random 7= record.
-preson.Random 8= record.
-preson.Random 9= record.
-preson.Random 10= record.
-preson.Random 11= record.
-preson.Random 12= record.
-preson.Random 13= record.
-preson.Random 14= record.
-preson.Random 15= record.
-preson.Dose Type= record.
-*/
 
 

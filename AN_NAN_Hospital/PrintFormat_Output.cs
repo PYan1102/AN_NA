@@ -14,25 +14,12 @@ namespace OnCube_Switch
     internal class PrintFormat_Output
     {
         
-
-
-        
-
-
         //打印格式涵式: 拿這個LIST之中所有類別出來
         public static void An_nan_print(List<Person_OC> datas)   
         {
-
-
-            DateTime now = DateTime.Now;
-             string dateString = now.ToString(("yyyy-MM-dd HHmmss"));
-         string _outputPath = $@"{Settings.OutputPath}/測試TXT檔{dateString}.txt";
-
-
-
-
-
-
+           DateTime now = DateTime.Now;
+           string dateString = now.ToString(("yyyy-MM-dd HHmmss"));
+           string _outputPath = $@"{Settings.OutputPath}/測試TXT檔{dateString}.txt";
            var encoding = CodePagesEncodingProvider.Instance.GetEncoding("big5")!;
             using var writer = new StreamWriter(_outputPath, false, encoding);
             StringBuilder sb = new StringBuilder();
@@ -105,10 +92,7 @@ namespace OnCube_Switch
 
             //MessageBox.Show("轉檔成功");
            
-        }
-
-
-         
+        }        
         public static string ECD(string chine, int Length)  //處理中文
         {
 
@@ -119,78 +103,5 @@ namespace OnCube_Switch
             byte[] Temp = big5.GetBytes(data);
             return big5.GetString(Temp, 0, Length);
         }
-
-
-
-
-
-
-
-
-
-
-
-
-        /*
-
-
-         public static string covertToBig5(string str, int len)       //轉成big5
-        {
-            byte[] strBytes = Encoding.GetEncoding("950").GetBytes(str);
-            string big5Str = Encoding.GetEncoding("950").GetString(strBytes, 0, len);
-            return big5Str;
-        }
-
-
-
-
-
-
-
-
-
-
-
-        //這個是用字節去數個數，補字符(Byte)用的
-        public  static string PadRightToByteLength(string input, int byteLength)
-        {
-
-            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
-            Encoding big5 = Encoding.GetEncoding(950);
-
-
-            // 將字串轉換為字節數組
-            byte[] inputBytes = big5.GetBytes(input);
-
-            // 檢查字節長度是否達到目標值
-            if (inputBytes.Length >= byteLength)
-            {
-                // 字節長度已達到或超過目標值，直接返回原始字串
-                return input;
-            }
-
-            // 計算需要填充的字節數量
-            int paddingBytesCount = byteLength - inputBytes.Length;
-
-            // 創建填充字節數組
-            byte[] paddingBytes = new byte[paddingBytesCount];
-            for (int i = 0; i < paddingBytesCount; i++)
-            {
-                paddingBytes[i] = 0;
-            }
-
-            // 合併原始字節數組和填充字節數組
-            byte[] resultBytes = new byte[byteLength];
-            Buffer.BlockCopy(inputBytes, 0, resultBytes, 0, inputBytes.Length);
-            Buffer.BlockCopy(paddingBytes, 0, resultBytes, inputBytes.Length, paddingBytes.Length);
-
-            // 將結果字節數組轉換回字串
-            string result = big5.GetString(resultBytes);
-
-            return result;
-        }
-
-        */
-
     }
 }

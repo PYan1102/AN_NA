@@ -7,18 +7,6 @@ namespace OnCube_Switch
 
         AN_NAN_RW Text_Csv = new AN_NAN_RW();  //創個讀取用的
 
-
-
-
-
-
-
-
-
-
-
-
-
         public Form1()
         {
 
@@ -34,12 +22,6 @@ namespace OnCube_Switch
             TB_CSV.Text = Settings.InputPath;                    //一開始要設定的路徑
             TB_TXT.Text = Settings.OutputPath;
             this.TopMost = true;
-
-
-
-
-
-
 
         }
 

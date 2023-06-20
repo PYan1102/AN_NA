@@ -14,11 +14,6 @@ namespace OnCube_Switch
          * 
          * 
          */
-
-
-
-
-
         public class Entity
         {
 
@@ -217,18 +212,11 @@ namespace OnCube_Switch
                 set { qfiller = value.Trim(); }
             }
 
-
         }
-
-
-
         public enum Edosetype
         {
             餐包,種包
         }
-
-
-
 
     }
 }
