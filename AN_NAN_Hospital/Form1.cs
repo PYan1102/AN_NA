@@ -9,7 +9,6 @@ namespace OnCube_Switch
 
         public Form1()
         {
-
             InitializeComponent();
         }
 
@@ -24,16 +23,6 @@ namespace OnCube_Switch
             this.TopMost = true;
 
         }
-
-
-
-
-
-
-
-
-
-
         private void Select_CSV_Folder_Click(object sender, EventArgs e)     //點擊選擇CSV檔資料夾
         {
             if (Folder_BrowserDialog.ShowDialog() == DialogResult.OK)  //有選擇了
@@ -91,6 +80,7 @@ namespace OnCube_Switch
 
 
             STAR_Btn.Enabled = false;
+            STAR_Btn.Text = "正在讀取....";
 
             try
             {
@@ -101,7 +91,7 @@ namespace OnCube_Switch
             catch (IOException ex)
             {
                 Debug.WriteLine(ex.ToString());
-              //  MessageBox.Show("請確認檔案是否正在被開啟，系統無法存取");
+                //  MessageBox.Show("請確認檔案是否正在被開啟，系統無法存取");
             }
 
             catch (Exception ex)
@@ -111,34 +101,10 @@ namespace OnCube_Switch
             }
 
 
-            STOP_Btn.Enabled = true;
-
-
-
-
-
-        }
-
-
-
-        private void STOP_Btn_Click(object sender, EventArgs e)      //停止
-        {
 
             STAR_Btn.Enabled = true;
-
-
-            STOP_Btn.Enabled = false;
-
-
-
-
-
-
+            STAR_Btn.Text = "開始";
         }
-
-
-
-
 
         public void ClearTB_CSV()
         {

@@ -15,15 +15,15 @@ namespace OnCube_Switch
     {
         
         //打印格式涵式: 拿這個LIST之中所有類別出來
-        public static void An_nan_print(List<Person_OC> datas)   
+        public static void An_nan_print(List<Person_OC> datas)   //接收一個類別串列型別 ， 在此名為data
         {
            DateTime now = DateTime.Now;
            string dateString = now.ToString(("yyyy-MM-dd HHmmss"));
-           string _outputPath = $@"{Settings.OutputPath}/測試TXT檔{dateString}.txt";
+           string _outputPath = $@"{Settings.OutputPath}/測試TXT檔{dateString}.txt";          //"文字檔案"名稱
            var encoding = CodePagesEncodingProvider.Instance.GetEncoding("big5")!;
             using var writer = new StreamWriter(_outputPath, false, encoding);
             StringBuilder sb = new StringBuilder();
-            foreach (var v in datas)
+            foreach (var v in datas)   //依序把串列中每個類別一個個拿出來
             {
 
                 //病患名子

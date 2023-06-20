@@ -66,7 +66,7 @@ namespace OnCube_Switch
 
                 sourceFilePath = $"{v}";
 
-                List<Person_OC> people = new List<Person_OC>();
+                List<Person_OC> people = new List<Person_OC>();   //創一個Oncube 成員類別串列 
 
                 var encoding = CodePagesEncodingProvider.Instance.GetEncoding("big5")!;
 
@@ -75,7 +75,7 @@ namespace OnCube_Switch
                     using var csv = new CsvReader(reader, CultureInfo.InvariantCulture);
                     {
                         {
-                            var records = csv.GetRecords<Entity>();
+                            var records = csv.GetRecords<Entity>();    //#######這裡是用CsvHelper讀取後，放"安南"成員的地方  !!!!!!!!!
 
 
 
@@ -93,7 +93,7 @@ namespace OnCube_Switch
                                 */
 
 
-                                Person_OC preson = new Person_OC()
+                                Person_OC preson = new Person_OC()    //創一個OnCube成員，並依序對應
                                 {
 
                                     Patient_Name = An_nan.Name,
@@ -127,7 +127,7 @@ namespace OnCube_Switch
 
                                 //創建OnCube的一個類別
                                 //把安南對應到OnCube的格子屬性區
-                                people.Add(preson);  //加到people類別串列之中  (OnCube)
+                                people.Add(preson);  //加到people類別串列之中  (OnCube) 
 
                             }
 

@@ -35,7 +35,6 @@
             TB_TXT = new TextBox();
             Select_TXT_Folder = new Button();
             STAR_Btn = new Button();
-            STOP_Btn = new Button();
             Folder_BrowserDialog = new FolderBrowserDialog();
             label3 = new Label();
             SuspendLayout();
@@ -105,27 +104,14 @@
             // STAR_Btn
             // 
             STAR_Btn.Font = new Font("Microsoft JhengHei UI", 100F, FontStyle.Regular, GraphicsUnit.Point);
-            STAR_Btn.Location = new Point(50, 318);
+            STAR_Btn.Location = new Point(50, 320);
             STAR_Btn.Margin = new Padding(4);
             STAR_Btn.Name = "STAR_Btn";
-            STAR_Btn.Size = new Size(406, 206);
+            STAR_Btn.Size = new Size(926, 206);
             STAR_Btn.TabIndex = 6;
             STAR_Btn.Text = "開始";
             STAR_Btn.UseVisualStyleBackColor = true;
             STAR_Btn.Click += STAR_Btn_Click;
-            // 
-            // STOP_Btn
-            // 
-            STOP_Btn.Enabled = false;
-            STOP_Btn.Font = new Font("Microsoft JhengHei UI", 100F, FontStyle.Regular, GraphicsUnit.Point);
-            STOP_Btn.Location = new Point(570, 318);
-            STOP_Btn.Margin = new Padding(4);
-            STOP_Btn.Name = "STOP_Btn";
-            STOP_Btn.Size = new Size(406, 206);
-            STOP_Btn.TabIndex = 7;
-            STOP_Btn.Text = "停止";
-            STOP_Btn.UseVisualStyleBackColor = true;
-            STOP_Btn.Click += STOP_Btn_Click;
             // 
             // label3
             // 
@@ -143,7 +129,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1029, 570);
             Controls.Add(label3);
-            Controls.Add(STOP_Btn);
             Controls.Add(STAR_Btn);
             Controls.Add(Select_TXT_Folder);
             Controls.Add(TB_TXT);
@@ -171,7 +156,6 @@
         private TextBox TB_TXT;
         private Button Select_TXT_Folder;
         private Button STAR_Btn;
-        private Button STOP_Btn;
         private FolderBrowserDialog Folder_BrowserDialog;
         private Label label3;
     }
