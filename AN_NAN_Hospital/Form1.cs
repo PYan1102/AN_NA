@@ -12,8 +12,6 @@ namespace OnCube_Switch
             InitializeComponent();
         }
 
-
-
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -30,27 +28,9 @@ namespace OnCube_Switch
         {
             if (Folder_BrowserDialog.ShowDialog() == DialogResult.OK)  //有選擇了
             {
-
-
                 TB_CSV.Text = Folder_BrowserDialog.SelectedPath;    //把選擇路徑給Text.box
-
-
-
-                bool check = Directory.Exists(TB_CSV.Text);         //確認是否有效路徑
-
-                if (!check)
-                {
-                    MessageBox.Show("請再次確認路徑是否正確");
-                    return;
-                }
-                else
-                {
-                    Settings.InputPath = TB_CSV.Text = Folder_BrowserDialog.SelectedPath;
-
-                    Settings.Save();
-                }
-
-
+                Settings.InputPath = TB_CSV.Text = Folder_BrowserDialog.SelectedPath;
+                Settings.Save();
             }
         }
 
@@ -58,27 +38,13 @@ namespace OnCube_Switch
         {
             if (Folder_BrowserDialog.ShowDialog() == DialogResult.OK)  //有選擇了
             {
-
                 TB_TXT.Text = Folder_BrowserDialog.SelectedPath;    //把選擇路徑給Text.box
-                bool check = Directory.Exists(TB_TXT.Text);         //確認是否有效路徑
-                if (!check)
-                {
-                    MessageBox.Show("請再次確認路徑是否正確");
-                    return;
-                }
-                else
-                {
-                    Settings.OutputPath = TB_TXT.Text = Folder_BrowserDialog.SelectedPath;
-
-
-                    Settings.Save();
-                }
-
-
+                Settings.OutputPath = TB_TXT.Text = Folder_BrowserDialog.SelectedPath;
+                Settings.Save();
             }
         }
 
-        private void Select_Backup_Folder_Click(object sender, EventArgs e)
+        private void Select_Backup_Folder_Click(object sender, EventArgs e)         //點擊選擇csv檔備份資料夾
         {
             if (Folder_BrowserDialog.ShowDialog() == DialogResult.OK)  //有選擇了
             {
@@ -91,20 +57,32 @@ namespace OnCube_Switch
 
         private void STAR_Btn_Click(object sender, EventArgs e)       //開始
         {
-
-
-            STAR_Btn.Enabled = false;
-            STAR_Btn.Text = "正在讀取....";
-
-
-            STAR_Btn.Enabled = true;
-            STAR_Btn.Text = "開始";
+            try
+            {
+                CheckBackupFolderExists();
+                _csvProcess.Start();
+                SwitchButtonEnabelState(true);
+            }
+            catch (IOException ex)
+            {
+                Debug.WriteLine(ex.ToString());
+                MessageBox.Show("請確認檔案是否正在被開啟，系統無法存取");
+                STOP_Btn_Click(new object(), new EventArgs());
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
+                MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                STOP_Btn_Click(new object(), new EventArgs());
+            }
         }
-
-        public void ClearTB_CSV()
+        private void STOP_Btn_Click(object sender, EventArgs e)
         {
-            TB_CSV.Text = string.Empty;
+            _csvProcess.Stop();
+            SwitchButtonEnabelState(false);
         }
+
+
 
         private void SwitchButtonEnabelState(bool start)
         {
@@ -112,11 +90,20 @@ namespace OnCube_Switch
             STOP_Btn.Enabled = start;
         }
 
-        private void STOP_Btn_Click(object sender, EventArgs e)
+
+        private void CheckBackupFolderExists()
         {
-            _csvProcess.Stop();
-            SwitchButtonEnabelState(false);
+            if (TB_BackupPath.Text.Length == 0)
+            {
+                throw new ArgumentNullException("備份路徑不可為空");
+            }
+            if (!Directory.Exists(TB_BackupPath.Text))
+            {
+                Directory.CreateDirectory(TB_BackupPath.Text);
+            }
         }
+
+
     }
 
 

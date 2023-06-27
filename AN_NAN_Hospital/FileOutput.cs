@@ -1,5 +1,5 @@
 ﻿using System.Text;
-using static OnCube_Switch.Check_Content;
+using OnCube_Switch.Models;
 
 namespace OnCube_Switch
 {

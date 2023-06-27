@@ -9,7 +9,6 @@
          * 
          */
 
-
         public const int Patient_Name = 20;
         public const int Patient_ID = 30;
         public const int Patient_Location = 50;
@@ -48,25 +47,5 @@
         public const int Random_15 = 30;
         public const int Dose_Type = 1;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
-
-
-
-
-
 }

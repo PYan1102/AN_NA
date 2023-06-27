@@ -3,7 +3,7 @@ using OnCube_Switch.Properties;
 using System.Diagnostics;
 using System.Globalization;
 using System.Text;
-using static OnCube_Switch.AN_NAN_CSV_People;
+using OnCube_Switch.Models;
 using OnCube_Switch.Converters;
 using System.Text.RegularExpressions;
 
@@ -70,9 +70,7 @@ namespace OnCube_Switch
             string DateString = now.ToString("yyyyMMdd");
 
             string folderPath = $"{Settings.OutputPath}/{DateString}";  //輸出資料夾位置
-
-           
-
+                                                                        
             string[] Folder_file = GetFiles();     //######################檔案位置陣列
 
             if (!Directory.Exists(folderPath))
@@ -122,19 +120,11 @@ namespace OnCube_Switch
                                 //創建OnCube的一個類別
                                 //把安南對應到OnCube的格子屬性區
                                 persons.Add(preson);  //加到people類別串列之中  (OnCube) 
-                    }
-                            Thread.Sleep(1000);  //暫停一下  不然每個txt檔案名稱都會一樣 因為我用時間來去定義名稱                     
+                    }                                        
                             FileOutput.An_nan_print(persons, Path.GetFileNameWithoutExtension(file));  //全部用完，用輸出的涵式去輸出                   
-                }
-
-                /*
-                string destinationFilePath = Path.Combine(destinationFolderPath, Path.GetFileName(sourceFilePath));
-                File.Move(sourceFilePath, destinationFilePath);
-                */
+                }            
             }
         }
-
-
 
         public string[] GetFiles()       //讀取資料夾內檔案，並把每個檔案個路徑用array儲存
         {
