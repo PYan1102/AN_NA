@@ -37,6 +37,10 @@
             STAR_Btn = new Button();
             Folder_BrowserDialog = new FolderBrowserDialog();
             label3 = new Label();
+            label4 = new Label();
+            TB_BackupPath = new TextBox();
+            Select_Backup_Folder = new Button();
+            STOP_Btn = new Button();
             SuspendLayout();
             // 
             // TB_CSV
@@ -104,10 +108,10 @@
             // STAR_Btn
             // 
             STAR_Btn.Font = new Font("Microsoft JhengHei UI", 100F, FontStyle.Regular, GraphicsUnit.Point);
-            STAR_Btn.Location = new Point(50, 320);
+            STAR_Btn.Location = new Point(50, 394);
             STAR_Btn.Margin = new Padding(4);
             STAR_Btn.Name = "STAR_Btn";
-            STAR_Btn.Size = new Size(926, 206);
+            STAR_Btn.Size = new Size(451, 206);
             STAR_Btn.TabIndex = 6;
             STAR_Btn.Text = "開始";
             STAR_Btn.UseVisualStyleBackColor = true;
@@ -123,11 +127,59 @@
             label3.TabIndex = 8;
             label3.Text = "請確認資料夾路徑是否正確";
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Microsoft JhengHei UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(3, 288);
+            label4.Margin = new Padding(4, 0, 4, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(182, 50);
+            label4.TabIndex = 9;
+            label4.Text = "備份路徑";
+            // 
+            // TB_BackupPath
+            // 
+            TB_BackupPath.Location = new Point(270, 309);
+            TB_BackupPath.Margin = new Padding(4);
+            TB_BackupPath.Name = "TB_BackupPath";
+            TB_BackupPath.Size = new Size(482, 26);
+            TB_BackupPath.TabIndex = 10;
+            // 
+            // Select_Backup_Folder
+            // 
+            Select_Backup_Folder.Font = new Font("Microsoft JhengHei UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            Select_Backup_Folder.Location = new Point(762, 267);
+            Select_Backup_Folder.Margin = new Padding(4);
+            Select_Backup_Folder.Name = "Select_Backup_Folder";
+            Select_Backup_Folder.Size = new Size(214, 99);
+            Select_Backup_Folder.TabIndex = 11;
+            Select_Backup_Folder.Text = "選擇TXT資料夾";
+            Select_Backup_Folder.UseVisualStyleBackColor = true;
+            Select_Backup_Folder.Click += Select_Backup_Folder_Click;
+            // 
+            // STOP_Btn
+            // 
+            STOP_Btn.Enabled = false;
+            STOP_Btn.Font = new Font("Microsoft JhengHei UI", 100F, FontStyle.Regular, GraphicsUnit.Point);
+            STOP_Btn.Location = new Point(552, 394);
+            STOP_Btn.Margin = new Padding(4);
+            STOP_Btn.Name = "STOP_Btn";
+            STOP_Btn.Size = new Size(451, 206);
+            STOP_Btn.TabIndex = 12;
+            STOP_Btn.Text = "停止";
+            STOP_Btn.UseVisualStyleBackColor = true;
+            STOP_Btn.Click += STOP_Btn_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(9F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1029, 570);
+            ClientSize = new Size(1067, 626);
+            Controls.Add(STOP_Btn);
+            Controls.Add(Select_Backup_Folder);
+            Controls.Add(TB_BackupPath);
+            Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(STAR_Btn);
             Controls.Add(Select_TXT_Folder);
@@ -158,5 +210,9 @@
         private Button STAR_Btn;
         private FolderBrowserDialog Folder_BrowserDialog;
         private Label label3;
+        private Label label4;
+        private TextBox TB_BackupPath;
+        private Button Select_Backup_Folder;
+        private Button STOP_Btn;
     }
 }

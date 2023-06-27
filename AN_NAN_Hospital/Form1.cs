@@ -5,7 +5,7 @@ namespace OnCube_Switch
     public partial class Form1 : Form  //主程式區
     {
 
-        AN_NAN_RW Text_Csv = new AN_NAN_RW();  //創個讀取用的
+        CSVProcess _csvProcess = new CSVProcess();  //創個讀取用的
 
         public Form1()
         {
@@ -20,7 +20,10 @@ namespace OnCube_Switch
 
             TB_CSV.Text = Settings.InputPath;                    //一開始要設定的路徑
             TB_TXT.Text = Settings.OutputPath;
+            TB_BackupPath.Text = Settings.BackupPath;
             this.TopMost = true;
+
+            SwitchButtonEnabelState(false);
 
         }
         private void Select_CSV_Folder_Click(object sender, EventArgs e)     //點擊選擇CSV檔資料夾
@@ -75,31 +78,23 @@ namespace OnCube_Switch
             }
         }
 
+        private void Select_Backup_Folder_Click(object sender, EventArgs e)
+        {
+            if (Folder_BrowserDialog.ShowDialog() == DialogResult.OK)  //有選擇了
+            {
+                TB_BackupPath.Text = Folder_BrowserDialog.SelectedPath;    //把選擇路徑給Text.box
+                Settings.BackupPath = TB_BackupPath.Text = Folder_BrowserDialog.SelectedPath;
+                Settings.Save();
+            }
+        }
+
+
         private void STAR_Btn_Click(object sender, EventArgs e)       //開始
         {
 
 
             STAR_Btn.Enabled = false;
             STAR_Btn.Text = "正在讀取....";
-
-            try
-            {
-                Text_Csv.RW_file();
-
-            }
-
-            catch (IOException ex)
-            {
-                Debug.WriteLine(ex.ToString());
-                //  MessageBox.Show("請確認檔案是否正在被開啟，系統無法存取");
-            }
-
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex.ToString());
-                MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
 
 
             STAR_Btn.Enabled = true;
@@ -111,6 +106,17 @@ namespace OnCube_Switch
             TB_CSV.Text = string.Empty;
         }
 
+        private void SwitchButtonEnabelState(bool start)
+        {
+            STAR_Btn.Enabled = !start;
+            STOP_Btn.Enabled = start;
+        }
+
+        private void STOP_Btn_Click(object sender, EventArgs e)
+        {
+            _csvProcess.Stop();
+            SwitchButtonEnabelState(false);
+        }
     }
 
 

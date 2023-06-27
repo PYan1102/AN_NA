@@ -14,7 +14,7 @@ namespace OnCube_Switch
          * 
          * 
          */
-        public class Entity
+        public class CSVColumn
         {
 
             private string patient_id = "";

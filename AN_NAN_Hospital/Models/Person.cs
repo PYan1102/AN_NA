@@ -2,7 +2,7 @@
 
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
-using static OnCube_Switch.PrintFormat_Output;
+using static OnCube_Switch.FileOutput;
 
 
 
@@ -24,7 +24,7 @@ using static OnCube_Switch.PrintFormat_Output;
 
 
 
-public class Person_OC
+public class Person
     {
       
 
@@ -116,16 +116,16 @@ public class Person_OC
 
 
 
-        private string start_date = " ";
-        public string Start_Date
+        private DateTime start_date;
+        public DateTime StartDate
         {
             get { return start_date; }
             set { start_date = value; }
         }
 
 
-        private string stop_date = " ";
-        public string Stop_Date
+        private DateTime stop_date;
+        public DateTime StopDate
         {
             get { return stop_date; }
             set { stop_date = value; }
@@ -167,8 +167,8 @@ public class Person_OC
 
 
 
-        private string birthday = " ";
-        public string BirthDay
+        private DateTime birthday;
+        public DateTime BirthDate
         {
             get { return birthday; }
             set { birthday = value; }
