@@ -55,7 +55,6 @@ namespace OnCube_Switch.Models
             get { return drugid; }          set { drugid = value.Trim(); }
         }
 
-
         private string qmedicine = "";
         [Index(6)]
         public string Qmedicine           //"G"
@@ -64,7 +63,6 @@ namespace OnCube_Switch.Models
             set { qmedicine = value.Trim(); }
 
         }
-
 
         private string qsource = "";
         [Index(7)]

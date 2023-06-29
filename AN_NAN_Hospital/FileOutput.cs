@@ -10,7 +10,7 @@ namespace OnCube_Switch
     internal class FileOutput
     {        
         //打印格式涵式: 拿這個LIST之中所有類別出來
-        public static void An_nan_print(List<Person> datas,string fileName)   //接收一個類別串列型別 ， 在此名為data
+        public static void An_nan_print(List<OCS_Person> datas,string fileName)   //接收一個類別串列型別 ， 在此名為data
         {
             var encoding = CodePagesEncodingProvider.Instance.GetEncoding("big5")!;
             string outputPath = $@"{Settings.OutputPath}/{fileName}_{DateTime.Now:ssfff}.txt";          //"文字檔案"名稱
@@ -66,7 +66,6 @@ namespace OnCube_Switch
                 sb.Append(v.Random_13.PadRight(OnCubeFormatLength.Random_13));
                 sb.Append(v.Random_14.PadRight(OnCubeFormatLength.Random_14));
                 sb.Append(v.Random_15.PadRight(OnCubeFormatLength.Random_15));
-
                 sb.AppendLine(v.Dose_Type.PadRight(OnCubeFormatLength.Dose_Type));
             }
             writer.Write(sb.ToString());

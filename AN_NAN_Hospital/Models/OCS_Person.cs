@@ -24,7 +24,7 @@ using static OnCube_Switch.FileOutput;
 
 
 
-public class Person
+public class OCS_Person
 {
 
 
