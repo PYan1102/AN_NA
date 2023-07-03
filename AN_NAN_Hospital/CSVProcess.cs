@@ -102,15 +102,13 @@ namespace OnCube_Switch
 
                         OCS_Person preson = new OCS_Person()    //創一個OnCube成員，並依序對應
                         {
-
-
                             Patient_Name = record.Name,
-                            Patient_ID = record.PatientID.Replace(" ", ""),
+                            Patient_ID = record.PatientID.Replace(" ",""),
                             Patient_Location = "一般",
-                            Quantity = "1",   //可能  Qty = qty,
+                            Quantity = qty,   //可能  Qty = qty,
                             Drug_Code = record.DrugID,
                             Medicine_Name = record.Qmedicine,
-                            Admin_Time = adminCode,
+                            Admin_Time ="QD",           //adminCode,
                             StartDate = DateTimeConverter.ToDateTime(record.Qstartdate, "yyyy/M/d"),             //An_nan.Qstartdate,
                             StopDate = DateTimeConverter.ToDateTime(record.Qenddate, "yyyy/M/d"),               //An_nan.Qenddate,
                             BirthDate = new DateTime(2000, 1, 1),

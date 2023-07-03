@@ -23,10 +23,10 @@ namespace OnCube_Switch
                 //病患ID
                 sb.Append(v.Patient_ID.PadRight(OnCubeFormatLength.Patient_ID));
                 //看診位置
-                sb.Append(v.Patient_Location.PadRight(OnCubeFormatLength.Patient_Location));
-                sb.Append(v.Doctor_Name.PadRight(OnCubeFormatLength.Doctor_Name));
-                sb.Append(v.BUT.PadRight(OnCubeFormatLength.BUT));
-                sb.Append(v.Quantity.PadRight(OnCubeFormatLength.Quantity));
+                sb.Append(ECD(v.Patient_Location,OnCubeFormatLength.Patient_Location));
+                sb.Append("".PadRight(OnCubeFormatLength.Doctor_Name));
+                sb.Append("".PadRight(OnCubeFormatLength.BUT));
+                sb.Append(v.Quantity.ToString().PadRight(OnCubeFormatLength.Quantity));
                 //藥品代碼
                 sb.Append(v.Drug_Code.PadRight(OnCubeFormatLength.Drug_Code));
                 //藥品通用名
@@ -36,21 +36,23 @@ namespace OnCube_Switch
                 sb.Append(v.StartDate.ToString("yyMMdd"));
                 //藥品結束日期
                 sb.Append(v.StopDate.ToString("yyMMdd"));
-                sb.Append(v.Note.PadRight(OnCubeFormatLength.Note));
-                sb.Append(v.Admin_Time_description.PadRight(OnCubeFormatLength.Admin_Time_description));
-                sb.Append(v.Prescription_Number.PadRight(OnCubeFormatLength.Prescription_Number));
+                sb.Append("".PadRight(OnCubeFormatLength.Note));
+                sb.Append("".PadRight(OnCubeFormatLength.Admin_Time_description));
+                sb.Append("".PadRight(OnCubeFormatLength.Prescription_Number));
                 //英文病人名稱
-                sb.Append(v.English_Patient_Name.PadRight(OnCubeFormatLength.English_Patient_Name));
+                sb.Append("".PadRight(OnCubeFormatLength.English_Patient_Name));
                 //病人生日
                 sb.Append(v.BirthDate.ToString("yyyy-MM-dd"));
                 //病人性別
-                sb.Append(ECD(v.Sex, OnCubeFormatLength.Sex));
-                sb.Append(v.Room_Number.PadRight(OnCubeFormatLength.Room_Number));
-                sb.Append(v.Bed_Number.PadRight(OnCubeFormatLength.Bed_Number));
-                sb.Append(v.UnitDose_State);
+                sb.Append("".PadRight(OnCubeFormatLength.Sex));
+                sb.Append("".PadRight(OnCubeFormatLength.Room_Number));
+                sb.Append("".PadRight(OnCubeFormatLength.Bed_Number));
+                sb.Append("".PadRight(OnCubeFormatLength.UnitDose_State));
                 //醫院名稱
                 sb.Append(ECD(v.Hospital_Name,OnCubeFormatLength.Hospital_Name));
-                //每行30ch  以下共450byte
+                sb.Append("".PadRight(450));
+                /*
+                 *每行30ch  以下共450byte
                 sb.Append(v.Random_1.PadRight(OnCubeFormatLength.Random_1));
                 sb.Append(v.Random_2.PadRight(OnCubeFormatLength.Random_2));
                 sb.Append(v.Random_3.PadRight(OnCubeFormatLength.Random_3));
@@ -66,6 +68,7 @@ namespace OnCube_Switch
                 sb.Append(v.Random_13.PadRight(OnCubeFormatLength.Random_13));
                 sb.Append(v.Random_14.PadRight(OnCubeFormatLength.Random_14));
                 sb.Append(v.Random_15.PadRight(OnCubeFormatLength.Random_15));
+                */
                 sb.AppendLine(v.Dose_Type.PadRight(OnCubeFormatLength.Dose_Type));
             }
             writer.Write(sb.ToString());

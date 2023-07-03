@@ -38,7 +38,7 @@ public class OCS_Person
 
     }
 
-    private string patient_iD = " ";          //###"2"
+    private string patient_iD = "";          //###"2"
     public string Patient_ID
     {
         get { return patient_iD; }
@@ -46,14 +46,14 @@ public class OCS_Person
         set { patient_iD = value.Trim(); }
     }
 
-    private string patient_location = " ";       //###"3"
+    private string patient_location = "";       //###"3"
     public string Patient_Location
     {
         get { return patient_location; }
         set { patient_location = value.Trim(); }
     }
 
-    private string doctor_name = " ";              //###"4"
+    private string doctor_name = "";              //###"4"
 
     public string Doctor_Name
     {
@@ -61,21 +61,21 @@ public class OCS_Person
         set { doctor_name = value; }
 
     }
-    private string but = "0";                  //###"5"
+    private string but = "";                  //###"5"
     public string BUT
     {
         get { return but; }
         set { but = value; }
     }
 
-    private string quantity = " ";                 //###"6"
-    public string Quantity
+    private float quantity;                 //###"6"
+    public float Quantity
     {
         get { return quantity; }
         set { quantity = value; }
     }
 
-    private string drug_code = " ";                //###"7"
+    private string drug_code = "";                //###"7"
     public string Drug_Code
     {
         get { return drug_code; }
@@ -84,7 +84,7 @@ public class OCS_Person
     }
 
 
-    private string medicine_name = " ";            //###"8"
+    private string medicine_name = "";            //###"8"
     public string Medicine_Name
     {
         get { return medicine_name; }
@@ -93,7 +93,7 @@ public class OCS_Person
     }
 
 
-    private string admin_time = " ";               //###"9"
+    private string admin_time = "";               //###"9"
 
     public string Admin_Time
     {
@@ -116,7 +116,7 @@ public class OCS_Person
 
     }
 
-    private string note = " ";
+    private string note = "";
     public string Note
     {
         get { return note; }
@@ -124,7 +124,7 @@ public class OCS_Person
     }
 
 
-    private string admin_time_description = " ";
+    private string admin_time_description = "";
     public string Admin_Time_description
     {
         get { return admin_time_description; }
@@ -132,7 +132,7 @@ public class OCS_Person
     }
 
 
-    private string prescription_number = " ";
+    private string prescription_number = "";
     public string Prescription_Number
     {
         get { return prescription_number; }
@@ -140,7 +140,7 @@ public class OCS_Person
     }
 
 
-    private string english_petient_name = " ";
+    private string english_petient_name = "";
     public string English_Patient_Name
     {
         get { return english_petient_name; }
@@ -155,7 +155,7 @@ public class OCS_Person
         set { birthday = value; }
     }
 
-    private string sex = " ";
+    private string sex = "";
     public string Sex
     {
         get { return sex; }
@@ -163,35 +163,35 @@ public class OCS_Person
     }
 
 
-    private string room_number = " ";
+    private string room_number = "";
     public string Room_Number
     {
         get { return room_number; }
         set { room_number = value; }
     }
 
-    private string bed_number = " ";
+    private string bed_number = "";
     public string Bed_Number
     {
         get { return bed_number; }
         set { bed_number = value; }
     }
 
-    private string unitdose_state = "0";   //他只有一個東西
+    private string unitdose_state = "";   //他只有一個東西
     public string UnitDose_State
     {
         get { return unitdose_state; }
         set { unitdose_state = value; }
     }
 
-    private string hospital_name = " ";
+    private string hospital_name = "";
     public string Hospital_Name
     {
         get { return hospital_name; }
         set { hospital_name = value; }
     }
 
-    private string random_1 = " ";
+    private string random_1 = "";
     public string Random_1
     {
         get { return random_1; }
@@ -199,7 +199,7 @@ public class OCS_Person
 
     }
 
-    private string random_2 = " ";
+    private string random_2 = "";
     public string Random_2
     {
         get { return random_2; }
@@ -207,7 +207,7 @@ public class OCS_Person
 
     }
 
-    private string random_3 = " ";
+    private string random_3 = "";
     public string Random_3
     {
         get { return random_3; }
@@ -215,7 +215,7 @@ public class OCS_Person
 
     }
 
-    private string random_4 = " ";
+    private string random_4 = "";
     public string Random_4
     {
         get { return random_4; }
@@ -223,7 +223,7 @@ public class OCS_Person
 
     }
 
-    private string random_5 = " ";
+    private string random_5 = "";
     public string Random_5
     {
         get { return random_5; }
@@ -231,7 +231,7 @@ public class OCS_Person
 
     }
 
-    private string random_6 = " ";
+    private string random_6 = "";
     public string Random_6
     {
         get { return random_6; }
@@ -240,7 +240,7 @@ public class OCS_Person
     }
 
 
-    private string random_7 = " ";
+    private string random_7 = "";
     public string Random_7
     {
         get { return random_7; }
@@ -248,14 +248,14 @@ public class OCS_Person
 
     }
 
-    private string random_8 = " ";
+    private string random_8 = "";
     public string Random_8
     {
         get { return random_8; }
         set { random_8 = value; }
 
     }
-    private string random_9 = " ";
+    private string random_9 = "";
     public string Random_9
     {
         get { return random_9; }
@@ -263,49 +263,49 @@ public class OCS_Person
 
     }
 
-    private string random_10 = " ";
+    private string random_10 ="";
     public string Random_10
     {
         get { return random_10; }
         set { random_10 = value; }
     }
 
-    private string random_11 = " ";
+    private string random_11 = "";
     public string Random_11
     {
         get { return random_11; }
         set { random_11 = value; }
     }
 
-    private string random_12 = " ";
+    private string random_12 = "";
     public string Random_12
     {
         get { return random_12; }
         set { random_12 = value; }
     }
 
-    private string random_13 = " ";
+    private string random_13 = "";
     public string Random_13
     {
         get { return random_13; }
         set { random_13 = value; }
     }
 
-    private string random_14 = " ";
+    private string random_14 = "";
     public string Random_14
     {
         get { return random_14; }
         set { random_14 = value; }
     }
 
-    private string random_15 = " ";
+    private string random_15 = "";
     public string Random_15
     {
         get { return random_15; }
         set { random_15 = value; }
     }
 
-    private string dose_type = " ";
+    private string dose_type = "";
     public string Dose_Type
     {
         get { return dose_type; }
