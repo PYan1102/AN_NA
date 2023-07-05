@@ -67,14 +67,14 @@ namespace OnCube_Switch
 
             string DateString = now.ToString("yyyyMMdd");
 
-            string folderPath = $"{Settings.BackupPath}/{DateString}";  //輸出資料夾位置
+            string BU_folderPath = $"{Settings.BackupPath}/{DateString}";  //輸出資料夾位置         
 
             string[] Folder_file = GetFiles();     //######################檔案位置陣列
 
-            if (!Directory.Exists(folderPath))
+            if (!Directory.Exists(BU_folderPath))
             {
                 // 創建新的資料夾
-                Directory.CreateDirectory(folderPath);
+                Directory.CreateDirectory(BU_folderPath);
             }
 
 
@@ -86,11 +86,10 @@ namespace OnCube_Switch
                 using var reader = new StreamReader(file, encoding);
                 {
                     using var csv = new CsvReader(reader, CultureInfo.InvariantCulture);
-                    var records = csv.GetRecords<CSVColumn>();    //#######這裡是用CsvHelper讀取後，放"安南"成員的地方  !!!!!!!!!
+                    var records = csv.GetRecords<CSVColumn>();    //用CsvHelper
                     List<OCS_Person> persons = new List<OCS_Person>();   //創一個Oncube 成員類別串列 
                     foreach (var record in records)  //把一個文件中，每一行(即成員)依序個別拿出
                     {
-
 
                         //過濾不設定的條件
                         if (record.Qmedicine == "科學中藥" || !record.Qusage.EndsWith('#') || (record.Qway != "口服" && record.Qway != "PO"))
@@ -122,10 +121,11 @@ namespace OnCube_Switch
                     FileOutput.An_nan_print(persons, Path.GetFileNameWithoutExtension(file));  //全部用完，用輸出的涵式去輸出                   
                 }
 
-                string destinationFilePath = Path.Combine(folderPath, Path.GetFileName(file));
+                string destinationFilePath = Path.Combine(BU_folderPath, Path.GetFileName(file));
                 File.Move(file, destinationFilePath);
-
             }
+            CK_fail();
+
         }
 
         public string[] GetFiles()       //讀取資料夾內檔案，並把每個檔案個路徑用array儲存
@@ -134,8 +134,60 @@ namespace OnCube_Switch
             string[] files = Directory.GetFiles(inputPath, "*.csv");   //找所有的Csv檔案
             return files;
         }
+
+
+
+
+        private static void  CK_fail()
+        {
+           
+            string Fail_folderepath = $"{Settings.BackupPath}/fail";
+
+            Debug.WriteLine($"fail資料夾路徑{Fail_folderepath}");
+            Debug.WriteLine($"有沒有創建路徑{Directory.Exists(Fail_folderepath)}");
+
+            if (!Directory.Exists(Fail_folderepath))
+            {
+                // 創建新的資料夾
+                Directory.CreateDirectory(Fail_folderepath);
+            }
+            
+            string sourepath = Settings.InputPath;
+
+            Debug.WriteLine($"{sourepath}");
+
+            string[] Failfile = Directory.GetFiles(sourepath);
+            int i = Failfile.Length;
+
+            Debug.WriteLine($"陣列個數{i}");
+
+            foreach (var f in Failfile)
+            {
+                Debug.WriteLine($"每個檔案路徑{f}");
+
+
+                string FailfileName = Path.GetFileName(f);
+
+                string destinationFilePath = Path.Combine(Fail_folderepath, FailfileName);
+
+                Debug.WriteLine($"失敗存放位址{destinationFilePath}");
+
+                File.Move(f, destinationFilePath);
+
+
+            }
+            if (i != 0)
+                MessageBox.Show($"目前共有{i}個檔案失敗，已轉移至失敗資料夾");
+
+        }
+
+
+
+
+
+
+
+
     }
+
 }
-
-
-

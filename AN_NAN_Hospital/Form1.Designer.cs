@@ -87,7 +87,7 @@
             // 
             // TB_TXT
             // 
-            TB_TXT.Location = new Point(270, 183);
+            TB_TXT.Location = new Point(270, 201);
             TB_TXT.Margin = new Padding(4);
             TB_TXT.Name = "TB_TXT";
             TB_TXT.Size = new Size(482, 26);
@@ -131,7 +131,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Microsoft JhengHei UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(3, 288);
+            label4.Location = new Point(72, 288);
             label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
             label4.Size = new Size(182, 50);
@@ -154,7 +154,7 @@
             Select_Backup_Folder.Name = "Select_Backup_Folder";
             Select_Backup_Folder.Size = new Size(214, 99);
             Select_Backup_Folder.TabIndex = 11;
-            Select_Backup_Folder.Text = "選擇TXT資料夾";
+            Select_Backup_Folder.Text = "選擇備份資料夾";
             Select_Backup_Folder.UseVisualStyleBackColor = true;
             Select_Backup_Folder.Click += Select_Backup_Folder_Click;
             // 
