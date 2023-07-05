@@ -61,7 +61,7 @@ namespace OnCube_Switch
             _cts?.Cancel();
         }
 
-        private void ProcessFile()   //讀取每個檔案資料  
+        private void ProcessFile()   
         {
             DateTime now = DateTime.Now;
 
@@ -80,7 +80,7 @@ namespace OnCube_Switch
 
 
 
-            foreach (var file in Folder_file)   //##############################"依序"拿出一個檔案
+            foreach (var file in Folder_file)   //
             {
                 var encoding = CodePagesEncodingProvider.Instance.GetEncoding("big5")!;
                 using var reader = new StreamReader(file, encoding);
