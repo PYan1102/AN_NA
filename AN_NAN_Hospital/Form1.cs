@@ -59,8 +59,10 @@ namespace OnCube_Switch
         {
             try
             {
+                Console.WriteLine("HAHAHAHAHA");
+                Debug.WriteLine("HAHA");
                 CheckBackupFolderExists();
-                _csvProcess.Start();                  
+                _csvProcess.Start();
                 SwitchButtonEnabelState(true);
             }
             catch (IOException ex)

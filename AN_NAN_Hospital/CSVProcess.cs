@@ -44,22 +44,20 @@ namespace OnCube_Switch
 
         public void Start()
         {
-
             _cts = new CancellationTokenSource();
             Task.Run(async () =>
             {
                 while (!_cts.IsCancellationRequested)
                 {
-                    await Task.Delay(500);
+                    await Task.Delay(1000);
 
                     ProcessFile();
+                    
                 }
                 _cts = null;
-                CK_fail();
+                
 
             });
-            
-
         }
 
         public void Stop()
@@ -70,26 +68,34 @@ namespace OnCube_Switch
         private  void ProcessFile()   
         {
             DateTime now = DateTime.Now;
-
             string DateString = now.ToString("yyyyMMdd");
+            string BU_folderPath = $"{Settings.BackupPath}\\{DateString}";  //輸出備份資料夾位置(當天時間)         
+            string[] Folder_file = GetFiles();     //檔案位置陣列
 
-            string BU_folderPath = $"{Settings.BackupPath}/{DateString}";  //輸出資料夾位置         
-
-            string[] Folder_file = GetFiles();     //######################檔案位置陣列
-
-            Debug.WriteLine($"csv的數量:{Folder_file.Length}");
-
-            if (!Directory.Exists(BU_folderPath))
+            try
             {
-                // 創建新的資料夾
-                Directory.CreateDirectory(BU_folderPath);
+                Debug.WriteLine($"csv的數量:{Folder_file.Length}");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("問題是" + ex.Message);
             }
 
-                foreach (var file in Folder_file)   //
+                if (!Directory.Exists(BU_folderPath))
+            {
+                // 沒有備份創建新的資料夾
+                Directory.CreateDirectory(BU_folderPath);
+            }
+            foreach (var file in Folder_file)   //
+            {
+
+                var encoding = CodePagesEncodingProvider.Instance.GetEncoding("big5")!;
+
+                try
                 {
-                    var encoding = CodePagesEncodingProvider.Instance.GetEncoding("big5")!;
-                    using var sr = new StreamReader(file, encoding);
-                    using var csv = new CsvReader(sr, CultureInfo.InvariantCulture);
+                    using (StreamReader sr = new StreamReader(file, encoding))
+                    {
+                        using var csv = new CsvReader(sr, CultureInfo.InvariantCulture);
                         var records = csv.GetRecords<CSVColumn>();    //用CsvHelper
                         List<OCS_Person> persons = new List<OCS_Person>();   //創一個Oncube 成員類別串列 
                         foreach (var record in records)  //把一個文件中，每一行(即成員)依序個別拿出
@@ -99,7 +105,17 @@ namespace OnCube_Switch
                             {
                                 continue;
                             }
-                            float qty = Convert.ToSingle(Regex.Replace(record.Qusage, @"\#", ""));
+
+                            float qty = 0;
+                            try
+                            {
+                                qty = Convert.ToSingle(Regex.Replace(record.Qusage, @"\#", ""));
+                            }
+                            catch (Exception ex)
+                            {
+                                Debug.WriteLine("迴圈中斷: " + ex.Message);
+                            }
+
                             string adminCode = Regex.Replace(record.Qmedfreq, @"[\/]", "");
 
                             OCS_Person preson = new OCS_Person()    //創一個OnCube成員，並依序對應
@@ -107,7 +123,7 @@ namespace OnCube_Switch
                                 Patient_Name = record.Name,
                                 Patient_ID = record.PatientID.Replace(" ", ""),
                                 Patient_Location = "一般",
-                                Quantity =qty,   //可能  Qty = qty,
+                                Quantity = qty,   //可能  Qty = qty,
                                 Drug_Code = record.DrugID,
                                 Medicine_Name = record.Qmedicine,
                                 Admin_Time = "QD",           //adminCode,
@@ -117,80 +133,86 @@ namespace OnCube_Switch
                                 Hospital_Name = "安南醫院",
                                 Dose_Type = "M"
                             };
-                            //創建OnCube的一個類別
-                            //把安南對應到OnCube的格子屬性區
+
                             persons.Add(preson);  //加到people類別串列之中  (OnCube) 
                         }
-                        FileOutput.An_nan_print(persons, Path.GetFileNameWithoutExtension(file));  //全部用完，用輸出的涵式去輸出                   
-                    
-                    string destinationFilePath = Path.Combine(BU_folderPath, Path.GetFileName(file));
-                    File.Move(file, destinationFilePath);
-                    Debug.WriteLine($"每個檔案路徑{destinationFilePath}");
+
+                        try
+                        {
+                            FileOutput.An_nan_print(persons, Path.GetFileNameWithoutExtension(file));//全部用完，用輸出的涵式去輸出  
+                        }
+                        catch (Exception ex)
+                        {
+                            Debug.WriteLine("迴圈中斷: " + ex.Message);
+                        }
+
+
+
+                    }
+
                 }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine("迴圈中斷: " + ex.Message);
+                }
+                string destinationFilePath = Path.Combine(BU_folderPath, Path.GetFileName(file));
+                try
+                {
+                    File.Move(file, destinationFilePath);
+                }
+                catch (Exception ex)
+                {
+
+                    File.Move(file, destinationFilePath);
+                    Debug.WriteLine("迴圈中斷: " + ex.Message);
+                }
+
+                Debug.WriteLine($"每個檔案路徑{destinationFilePath}");
+
+            }
+
+            CK_fail();
         }
 
-        private string[] GetFiles()       //讀取資料夾內檔案，並把每個檔案個路徑用array儲存
+        private string[] GetFiles()     
         {
-            string inPath = Settings.InputPath;      //把讀取資料料夾給他
-            string[] files = Directory.GetFiles(inPath,"*.csv");   //找所有的Csv檔案
+            string inPath = Settings.InputPath;      
+            string[] files = Directory.GetFiles(inPath,"*.csv");   
             return files;
         }
 
-
-
-
-        private bool  CK_fail()
-        {
-           
+        private void  CK_fail()
+        {           
             string Fail_folderepath = $"{Settings.BackupPath}/fail";
-
             Debug.WriteLine($"fail資料夾路徑{Fail_folderepath}");
             Debug.WriteLine($"有沒有創建路徑{Directory.Exists(Fail_folderepath)}");
-
             if (!Directory.Exists(Fail_folderepath))
             {
                 // 創建新的資料夾
                 Directory.CreateDirectory(Fail_folderepath);
-            }
-            
+            }          
             string sourepath = Settings.InputPath;
-
             Debug.WriteLine($"{sourepath}");
-
             string[] Failfile = Directory.GetFiles(sourepath);
             int i = Failfile.Length;
-
-            Debug.WriteLine($"陣列個數{i}");
-
-            foreach (var f in Failfile)
-            {
-                Debug.WriteLine($"每個檔案路徑{f}");
-
-
-                string FailfileName = Path.GetFileName(f);
-
-                string destinationFilePath = Path.Combine(Fail_folderepath, FailfileName);
-
-                Debug.WriteLine($"失敗存放位址{destinationFilePath}");
-
-                File.Move(f, destinationFilePath);
-
-
-            }
             if (i != 0)
             {
                 MessageBox.Show($"目前共有{i}個檔案失敗，已轉移至失敗資料夾");
-                return false;
+                Debug.WriteLine($"陣列個數{i}");
+                foreach (var f in Failfile)
+                {
+                    Debug.WriteLine($"每個檔案路徑{f}");
+                    string FailfileName = Path.GetFileName(f);
+                    string destinationFilePath = Path.Combine(Fail_folderepath, FailfileName);
+                    Debug.WriteLine($"失敗存放位址{destinationFilePath}");
+                    File.Move(f, destinationFilePath);
+                }
+
             }
-            else
-                return true;
+           
+           
+            
         }
-
-
-
-
-
-
 
 
     }

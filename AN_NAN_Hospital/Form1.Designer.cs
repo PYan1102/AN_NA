@@ -121,11 +121,11 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Microsoft JhengHei UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(364, 9);
+            label3.Location = new Point(350, 9);
             label3.Name = "label3";
-            label3.Size = new Size(339, 35);
+            label3.Size = new Size(227, 35);
             label3.TabIndex = 8;
-            label3.Text = "請確認資料夾路徑是否正確";
+            label3.Text = "OnCube轉檔程式";
             // 
             // label4
             // 
