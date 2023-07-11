@@ -44,24 +44,30 @@ namespace OnCube_Switch
 
         public void Start()
         {
+
             _cts = new CancellationTokenSource();
             Task.Run(async () =>
             {
                 while (!_cts.IsCancellationRequested)
                 {
                     await Task.Delay(500);
+
                     ProcessFile();
                 }
                 _cts = null;
+                CK_fail();
+
             });
+            
+
         }
 
         public void Stop()
         {
-            _cts?.Cancel();
+          _cts?.Cancel();
         }
 
-        private void ProcessFile()   
+        private  void ProcessFile()   
         {
             DateTime now = DateTime.Now;
 
@@ -71,74 +77,69 @@ namespace OnCube_Switch
 
             string[] Folder_file = GetFiles();     //######################檔案位置陣列
 
+            Debug.WriteLine($"csv的數量:{Folder_file.Length}");
+
             if (!Directory.Exists(BU_folderPath))
             {
                 // 創建新的資料夾
                 Directory.CreateDirectory(BU_folderPath);
             }
 
-
-
-
-            foreach (var file in Folder_file)   //
-            {
-                var encoding = CodePagesEncodingProvider.Instance.GetEncoding("big5")!;
-                using var reader = new StreamReader(file, encoding);
+                foreach (var file in Folder_file)   //
                 {
-                    using var csv = new CsvReader(reader, CultureInfo.InvariantCulture);
-                    var records = csv.GetRecords<CSVColumn>();    //用CsvHelper
-                    List<OCS_Person> persons = new List<OCS_Person>();   //創一個Oncube 成員類別串列 
-                    foreach (var record in records)  //把一個文件中，每一行(即成員)依序個別拿出
-                    {
-
-                        //過濾不設定的條件
-                        if (record.Qmedicine == "科學中藥" || !record.Qusage.EndsWith('#') || (record.Qway != "口服" && record.Qway != "PO"))
+                    var encoding = CodePagesEncodingProvider.Instance.GetEncoding("big5")!;
+                    using var sr = new StreamReader(file, encoding);
+                    using var csv = new CsvReader(sr, CultureInfo.InvariantCulture);
+                        var records = csv.GetRecords<CSVColumn>();    //用CsvHelper
+                        List<OCS_Person> persons = new List<OCS_Person>();   //創一個Oncube 成員類別串列 
+                        foreach (var record in records)  //把一個文件中，每一行(即成員)依序個別拿出
                         {
-                            continue;
+                            //過濾不設定的條件
+                            if (record.Qmedicine == "科學中藥" || !record.Qusage.EndsWith('#') || (record.Qway != "口服" && record.Qway != "PO"))
+                            {
+                                continue;
+                            }
+                            float qty = Convert.ToSingle(Regex.Replace(record.Qusage, @"\#", ""));
+                            string adminCode = Regex.Replace(record.Qmedfreq, @"[\/]", "");
+
+                            OCS_Person preson = new OCS_Person()    //創一個OnCube成員，並依序對應
+                            {
+                                Patient_Name = record.Name,
+                                Patient_ID = record.PatientID.Replace(" ", ""),
+                                Patient_Location = "一般",
+                                Quantity =qty,   //可能  Qty = qty,
+                                Drug_Code = record.DrugID,
+                                Medicine_Name = record.Qmedicine,
+                                Admin_Time = "QD",           //adminCode,
+                                StartDate = DateTimeConverter.ToDateTime(record.Qstartdate, "yyyy/M/d"),             //An_nan.Qstartdate,
+                                StopDate = DateTimeConverter.ToDateTime(record.Qenddate, "yyyy/M/d"),               //An_nan.Qenddate,
+                                BirthDate = new DateTime(2000, 1, 1),
+                                Hospital_Name = "安南醫院",
+                                Dose_Type = "M"
+                            };
+                            //創建OnCube的一個類別
+                            //把安南對應到OnCube的格子屬性區
+                            persons.Add(preson);  //加到people類別串列之中  (OnCube) 
                         }
-                        float qty = Convert.ToSingle(Regex.Replace(record.Qusage, @"\#", ""));
-                        string adminCode = Regex.Replace(record.Qmedfreq, @"[\/]", "");
-
-                        OCS_Person preson = new OCS_Person()    //創一個OnCube成員，並依序對應
-                        {
-                            Patient_Name = record.Name,
-                            Patient_ID = record.PatientID.Replace(" ",""),
-                            Patient_Location = "一般",
-                            Quantity = qty,   //可能  Qty = qty,
-                            Drug_Code = record.DrugID,
-                            Medicine_Name = record.Qmedicine,
-                            Admin_Time ="QD",           //adminCode,
-                            StartDate = DateTimeConverter.ToDateTime(record.Qstartdate, "yyyy/M/d"),             //An_nan.Qstartdate,
-                            StopDate = DateTimeConverter.ToDateTime(record.Qenddate, "yyyy/M/d"),               //An_nan.Qenddate,
-                            BirthDate = new DateTime(2000, 1, 1),
-                            Hospital_Name = "安南醫院",
-                            Dose_Type = "M"
-                        };
-                        //創建OnCube的一個類別
-                        //把安南對應到OnCube的格子屬性區
-                        persons.Add(preson);  //加到people類別串列之中  (OnCube) 
-                    }
-                    FileOutput.An_nan_print(persons, Path.GetFileNameWithoutExtension(file));  //全部用完，用輸出的涵式去輸出                   
+                        FileOutput.An_nan_print(persons, Path.GetFileNameWithoutExtension(file));  //全部用完，用輸出的涵式去輸出                   
+                    
+                    string destinationFilePath = Path.Combine(BU_folderPath, Path.GetFileName(file));
+                    File.Move(file, destinationFilePath);
+                    Debug.WriteLine($"每個檔案路徑{destinationFilePath}");
                 }
-
-                string destinationFilePath = Path.Combine(BU_folderPath, Path.GetFileName(file));
-                File.Move(file, destinationFilePath);
-            }
-            CK_fail();
-
         }
 
-        public string[] GetFiles()       //讀取資料夾內檔案，並把每個檔案個路徑用array儲存
+        private string[] GetFiles()       //讀取資料夾內檔案，並把每個檔案個路徑用array儲存
         {
-            string inputPath = Settings.InputPath;      //把讀取資料料夾給他
-            string[] files = Directory.GetFiles(inputPath, "*.csv");   //找所有的Csv檔案
+            string inPath = Settings.InputPath;      //把讀取資料料夾給他
+            string[] files = Directory.GetFiles(inPath,"*.csv");   //找所有的Csv檔案
             return files;
         }
 
 
 
 
-        private static void  CK_fail()
+        private bool  CK_fail()
         {
            
             string Fail_folderepath = $"{Settings.BackupPath}/fail";
@@ -177,8 +178,12 @@ namespace OnCube_Switch
 
             }
             if (i != 0)
+            {
                 MessageBox.Show($"目前共有{i}個檔案失敗，已轉移至失敗資料夾");
-
+                return false;
+            }
+            else
+                return true;
         }
 
 

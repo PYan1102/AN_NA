@@ -60,7 +60,7 @@ namespace OnCube_Switch
             try
             {
                 CheckBackupFolderExists();
-                _csvProcess.Start();
+                _csvProcess.Start();                  
                 SwitchButtonEnabelState(true);
             }
             catch (IOException ex)
