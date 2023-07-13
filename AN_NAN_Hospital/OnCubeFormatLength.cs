@@ -3,11 +3,7 @@
     internal class OnCubeFormatLength
     {
 
-        /*這裡是放置OnCube限制ch數的地方，皆用常數儲存
-         * 
-         * 
-         * 
-         */
+        //這裡是放置OnCube限制ch數的地方，皆用常數儲存
 
         public const int Patient_Name = 20;
         public const int Patient_ID = 30;

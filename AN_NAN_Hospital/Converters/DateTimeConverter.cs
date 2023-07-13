@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace OnCube_Switch.Converters
 {
-    internal class DateTimeConverter
+    internal class DateTimeConverter  //轉換日期行蝶和字串型別的
     {
         internal static DateTime ToDateTime(string input, string format)
         {

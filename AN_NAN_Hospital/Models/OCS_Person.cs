@@ -92,9 +92,7 @@ public class OCS_Person
         set { medicine_name = value; }
     }
 
-
     private string admin_time = "";               //###"9"
-
     public string Admin_Time
     {
         get { return admin_time; }
@@ -106,8 +104,6 @@ public class OCS_Person
         get { return start_date; }
         set { start_date = value; }
     }
-
-
     private DateTime stop_date;
     public DateTime StopDate
     {
@@ -115,14 +111,12 @@ public class OCS_Person
         set { stop_date = value; }
 
     }
-
     private string note = "";
     public string Note
     {
         get { return note; }
         set { note = value; }
     }
-
 
     private string admin_time_description = "";
     public string Admin_Time_description
@@ -131,14 +125,12 @@ public class OCS_Person
         set { admin_time = value; }
     }
 
-
     private string prescription_number = "";
     public string Prescription_Number
     {
         get { return prescription_number; }
         set { prescription_number = value; }
     }
-
 
     private string english_petient_name = "";
     public string English_Patient_Name

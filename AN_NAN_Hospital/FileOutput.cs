@@ -9,11 +9,10 @@ namespace OnCube_Switch
      */
     internal class FileOutput
     {        
-        //打印格式涵式: 拿這個LIST之中所有類別出來
         public static void An_nan_print(List<OCS_Person> datas,string fileName)   //接收一個類別串列型別 ， 在此名為data
         {
             var encoding = CodePagesEncodingProvider.Instance.GetEncoding("big5")!;
-            string outputPath = $@"{Settings.OutputPath}/{fileName}_{DateTime.Now:ssfff}.txt";          //"文字檔案"名稱
+            string outputPath = $@"{Settings.OutputPath}/{fileName}_{DateTime.Now:ssfff}.txt";          //"文字檔案"名稱(用毫秒就不會重複了)
             using var writer = new StreamWriter(outputPath, false, encoding);
             StringBuilder sb = new StringBuilder();
             foreach (var v in datas)   //依序把串列中每個類別一個個拿出來
@@ -50,28 +49,14 @@ namespace OnCube_Switch
                 sb.Append("".PadRight(OnCubeFormatLength.UnitDose_State));
                 //醫院名稱
                 sb.Append(ECD(v.Hospital_Name,OnCubeFormatLength.Hospital_Name));
-                sb.Append("".PadRight(450));
                 /*
-                 *每行30ch  以下共450byte
-                sb.Append(v.Random_1.PadRight(OnCubeFormatLength.Random_1));
-                sb.Append(v.Random_2.PadRight(OnCubeFormatLength.Random_2));
-                sb.Append(v.Random_3.PadRight(OnCubeFormatLength.Random_3));
-                sb.Append(v.Random_4.PadRight(OnCubeFormatLength.Random_4));
-                sb.Append(v.Random_5.PadRight(OnCubeFormatLength.Random_5));
-                sb.Append(v.Random_6.PadRight(OnCubeFormatLength.Random_6));
-                sb.Append(v.Random_7.PadRight(OnCubeFormatLength.Random_7));
-                sb.Append(v.Random_8.PadRight(OnCubeFormatLength.Random_8));
-                sb.Append(v.Random_9.PadRight(OnCubeFormatLength.Random_9));
-                sb.Append(v.Random_10.PadRight(OnCubeFormatLength.Random_10));                    
-                sb.Append(v.Random_11.PadRight(OnCubeFormatLength.Random_11));
-                sb.Append(v.Random_12.PadRight(OnCubeFormatLength.Random_12));
-                sb.Append(v.Random_13.PadRight(OnCubeFormatLength.Random_13));
-                sb.Append(v.Random_14.PadRight(OnCubeFormatLength.Random_14));
-                sb.Append(v.Random_15.PadRight(OnCubeFormatLength.Random_15));
+                *每行30ch  以下共450byte
+                *sb.Append(v.Random_1.PadRight(OnCubeFormatLength.Random_1~Random_15));    
                 */
-                sb.AppendLine(v.Dose_Type.PadRight(OnCubeFormatLength.Dose_Type));
+                sb.Append("".PadRight(450));               
+                sb.AppendLine(v.Dose_Type.PadRight(OnCubeFormatLength.Dose_Type)); //最後換行
             }
-            writer.Write(sb.ToString());
+            writer.Write(sb.ToString()); //用寫入流把串接的字串寫到新增的txt
         }        
         public static string ECD(string chine, int Length)  //處理中文
         {

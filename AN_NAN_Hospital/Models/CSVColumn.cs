@@ -5,11 +5,11 @@ namespace OnCube_Switch.Models
     internal class CSVColumn
     {
         /*
-         * Define:
          * 放安南醫院給的CSV檔案欄位
          * 
          * 主要給Text_conbine 用的Entity
          * 串流讀一讀，用CsvHelper去分類這樣
+         * 用index去分
          */
 
         private string patient_id = "";
