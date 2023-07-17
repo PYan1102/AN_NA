@@ -22,7 +22,7 @@ namespace OnCube_Switch
             {
                 while (!_cts.IsCancellationRequested)
                 {
-                    await Task.Delay(1000);
+                    await Task.Delay(500);
                     ProcessFile();                    
                 }
                 _cts = null;              
@@ -45,9 +45,11 @@ namespace OnCube_Switch
             }
             foreach (var file in Folder_file)   //
             {
-                var encoding = CodePagesEncodingProvider.Instance.GetEncoding("big5")!;              
-                    //這裡要用{}包起來  不然移動檔案時會卡到process的使用
-                    using (StreamReader sr = new StreamReader(file, encoding))
+                var encoding = CodePagesEncodingProvider.Instance.GetEncoding("big5")!;
+                //這裡要用{}包起來  不然移動檔案時會卡到process的使用
+                using (StreamReader sr = new StreamReader(file, encoding))
+                {
+                    try
                     {
                         using var csv = new CsvReader(sr, CultureInfo.InvariantCulture);
                         var records = csv.GetRecords<CSVColumn>();    //用CsvHelper
@@ -59,29 +61,52 @@ namespace OnCube_Switch
                             {
                                 continue;
                             }
-
-                            float qty = 0;                            
-                            qty = Convert.ToSingle(Regex.Replace(record.Qusage, @"\#", ""));  //正規表示式 (替換用)
-                            string adminCode = Regex.Replace(record.Qmedfreq, @"[\/]", "");   ////正規表示式  (替換用)
-                            OCS_Person preson = new OCS_Person()    //創一個OnCube成員，並依序對應
+                            try
                             {
-                                Patient_Name = record.Name,
-                                Patient_ID = record.PatientID.Replace(" ", ""),
-                                Patient_Location = "一般",
-                                Quantity = qty,
-                                Drug_Code = record.DrugID,
-                                Medicine_Name = record.Qmedicine,
-                                Admin_Time = "QD",           //adminCode,(因為有些沒定義，先用QD代替，之後需要再OnCube定義)
-                                StartDate = DateTimeConverter.ToDateTime(record.Qstartdate, "yyyy/M/d"),             
-                                StopDate = DateTimeConverter.ToDateTime(record.Qenddate, "yyyy/M/d"),               
-                                BirthDate = new DateTime(2000, 1, 1),
-                                Hospital_Name = "安南醫院",
-                                Dose_Type = "M"
-                            };
-                            persons.Add(preson);  //加到people類別串列之中  (OnCube) 
+                                float qty = 0;
+
+                                qty = Convert.ToSingle(Regex.Replace(record.Qusage, @"\#", ""));  //正規表示式 (替換用)
+                                string adminCode = Regex.Replace(record.Qmedfreq, @"[\/]", "");   ////正規表示式  (替換用)
+                                OCS_Person preson = new OCS_Person()
+                                {
+                                    Patient_Name = record.Name,
+                                    Patient_ID = record.PatientID.Replace(" ", ""),
+                                    Patient_Location = "一般",
+                                    Quantity = qty,
+                                    Drug_Code = record.DrugID,
+                                    Medicine_Name = record.Qmedicine,
+                                    Admin_Time = "QD",           //adminCode,(因為有些沒定義，先用QD代替，之後需要再OnCube定義)
+                                    StartDate = DateTimeConverter.ToDateTime(record.Qstartdate, "yyyy/M/d"),
+                                    StopDate = DateTimeConverter.ToDateTime(record.Qenddate, "yyyy/M/d"),
+                                    BirthDate = new DateTime(2000, 1, 1),
+                                    Hospital_Name = "安南醫院",
+                                    Dose_Type = "M"
+                                };
+                                persons.Add(preson);  //加到people類別串列之中  (OnCube) 
+
+
+
+
+
+                            }
+                            catch (Exception ex)
+                            {                              
+                                Debug.WriteLine(file);
+                                Debug.WriteLine(ex.ToString());
+                            }
                         }
                         FileOutput.An_nan_print(persons, Path.GetFileNameWithoutExtension(file));//全部用完，用輸出的涵式去輸出  
                     }
+                    catch (Exception ex)
+                    {
+                        Debug.WriteLine(file);                     
+                        Debug.WriteLine("讀檔block");
+                        Debug.WriteLine(ex);
+                        
+                    }
+
+
+                }
          
                 string destinationFilePath = Path.Combine(BU_folderPath, Path.GetFileName(file));
                 

@@ -108,7 +108,7 @@
             // STAR_Btn
             // 
             STAR_Btn.Font = new Font("Microsoft JhengHei UI", 100F, FontStyle.Regular, GraphicsUnit.Point);
-            STAR_Btn.Location = new Point(50, 394);
+            STAR_Btn.Location = new Point(29, 394);
             STAR_Btn.Margin = new Padding(4);
             STAR_Btn.Name = "STAR_Btn";
             STAR_Btn.Size = new Size(451, 206);
@@ -162,7 +162,7 @@
             // 
             STOP_Btn.Enabled = false;
             STOP_Btn.Font = new Font("Microsoft JhengHei UI", 100F, FontStyle.Regular, GraphicsUnit.Point);
-            STOP_Btn.Location = new Point(552, 394);
+            STOP_Btn.Location = new Point(525, 394);
             STOP_Btn.Margin = new Padding(4);
             STOP_Btn.Name = "STOP_Btn";
             STOP_Btn.Size = new Size(451, 206);
@@ -175,7 +175,7 @@
             // 
             AutoScaleDimensions = new SizeF(9F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1067, 626);
+            ClientSize = new Size(1015, 626);
             Controls.Add(STOP_Btn);
             Controls.Add(Select_Backup_Folder);
             Controls.Add(TB_BackupPath);

@@ -18,7 +18,7 @@ namespace OnCube_Switch
             TB_CSV.Text = Settings.InputPath;                    //一開始要設定的路徑
             TB_TXT.Text = Settings.OutputPath;
             TB_BackupPath.Text = Settings.BackupPath;
-            this.TopMost = true;
+           // this.TopMost = true;
             SwitchButtonEnabelState(false);        //按鈕切換
         }
         private void Select_CSV_Folder_Click(object sender, EventArgs e)     //點擊選擇CSV檔資料夾
@@ -56,8 +56,6 @@ namespace OnCube_Switch
         {
             try
             {
-                Console.WriteLine("HAHAHAHAHA");
-                Debug.WriteLine("HAHA");
                 CheckBackupFolderExists();
                 _csvProcess.Start();
                 SwitchButtonEnabelState(true);
