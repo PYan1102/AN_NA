@@ -13,6 +13,8 @@ namespace OnCube_Switch
 
         internal static string BackupPath { get => Properties.Settings.Default.BackupPath; set => Properties.Settings.Default.BackupPath = value; }
 
+        internal static string CP_Path { get => Properties.Settings.Default.CP_Path; set => Properties.Settings.Default.CP_Path = value; }
+
         internal static void Save()
         {
             Properties.Settings.Default.Save();

@@ -58,5 +58,17 @@ namespace OnCube_Switch.Properties {
                 this["BackupPath"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string CP_Path {
+            get {
+                return ((string)(this["CP_Path"]));
+            }
+            set {
+                this["CP_Path"] = value;
+            }
+        }
     }
 }

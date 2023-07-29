@@ -36,15 +36,14 @@ namespace OnCube_Switch
         {
                   
             string[] Folder_file = GetFiles();     //檔案位置陣列                      
-            foreach (var file in Folder_file)   //
+            foreach (var file in Folder_file)   
             {
                 try
                 {
                     var encoding = CodePagesEncodingProvider.Instance.GetEncoding("big5")!;
                     //這裡要用{}包起來  不然移動檔案時會卡到process的使用
                     using (StreamReader sr = new StreamReader(file, encoding))
-                    {
-                        
+                    {                      
                             using var csv = new CsvReader(sr, CultureInfo.InvariantCulture);
                             var records = csv.GetRecords<CSVColumn>();    //用CsvHelper
                             List<OCS_Person> persons = new List<OCS_Person>();   //創一個Oncube 成員類別串列 

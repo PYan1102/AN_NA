@@ -49,6 +49,10 @@
               "target": "Package",
               "version": "[30.0.1, )"
             },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.5, )"
+            },
             "System.Runtime.InteropServices": {
               "target": "Package",
               "version": "[4.3.0, )"
