@@ -8,6 +8,10 @@ using System.Threading.Tasks;
 
 namespace OnCube_Switch
 {
+
+    /// <summary>
+    /// 字串比較，呼叫SQL功能，等等都在這
+    /// </summary>
     internal class Compare_Qname
     {
         ItemService itemSer = new ItemService();
@@ -15,10 +19,8 @@ namespace OnCube_Switch
         public static Dictionary<string, string> data = new Dictionary<string, string>();
 
 
-
-
         /// <summary>
-        /// 讀取SQL資料
+        /// 清除字典資料，讀取SQL資料給字典
         /// </summary>
         public void Read_txtDB()
         {
@@ -30,10 +32,9 @@ namespace OnCube_Switch
 
 
         /// <summary>
-        /// 創建SQL資料
+        /// 創建SQL資料，AC00000
         /// </summary>
         /// <param name="Newname"></param>
-        /// <param name="data"></param>
 
         private void CreatDB_txt(string Newname)
         {
@@ -56,7 +57,7 @@ namespace OnCube_Switch
         }
 
         /// <summary>
-        /// 比較SQL資料
+        /// 比較SQL資料，引數字串
         /// </summary>
         /// <param name="old_name"></param>
         /// <returns></returns>
@@ -65,8 +66,6 @@ namespace OnCube_Switch
         {
             bool Scan = true;  //是否掃過SQL資料
             string restring = "0";  //預設返回字串
-
-
 
             Read_txtDB();
             do

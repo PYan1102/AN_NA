@@ -20,8 +20,7 @@ namespace OnCube_Switch
         }
 
         public string Compare(string data) 
-        {           
-                     
+        {                                
             if (code==null||name == null||y==false) 
             {
                 add();          
@@ -34,10 +33,8 @@ namespace OnCube_Switch
                     return code[i];
                 }                               
             }
-
             return "失敗";  //待修正
         }
-
 
         private void ReadFile(string filepath)
         {
@@ -55,7 +52,6 @@ namespace OnCube_Switch
                
             }
         }
-
 
         public void text()
         {

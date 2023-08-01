@@ -14,7 +14,12 @@ namespace OnCube_Switch
         /*
          * 主要"安南醫院"讀取和寫入邏輯在這裡      
          */
+
         private CancellationTokenSource? _cts;
+
+        /// <summary>
+        /// 開始
+        /// </summary>
         public void Start()
         {
             _cts = new CancellationTokenSource();
@@ -28,13 +33,20 @@ namespace OnCube_Switch
                 _cts = null;              
             });
         }
+
+        /// <summary>
+        /// 停止程序
+        /// </summary>
         public void Stop()
         {
           _cts?.Cancel();
         }
+
+        /// <summary>
+        /// 處理CSV檔案
+        /// </summary>
         private  void ProcessFile()   
         {
-                  
             string[] Folder_file = GetFiles();     //檔案位置陣列                      
             foreach (var file in Folder_file)   
             {
@@ -53,10 +65,8 @@ namespace OnCube_Switch
                                 if (record.Qmedicine == "科學中藥" || !record.Qusage.EndsWith('#') || (record.Qway != "口服" && record.Qway != "PO"))
                                 {
                                     continue;
-                                }
-                                
+                                }                                
                                  float qty = 0;
-
                                  qty = Convert.ToSingle(Regex.Replace(record.Qusage, @"\#", ""));  //正規表示式 (替換用)
                                  string adminCode = Regex.Replace(record.Qmedfreq, @"[\/]", "");   ////正規表示式  (替換用)
                                  OCS_Person preson = new OCS_Person()
@@ -74,14 +84,7 @@ namespace OnCube_Switch
                                         Hospital_Name = "安南醫院",
                                         Dose_Type = "M"
                                  };
-                                 persons.Add(preson);  //加到people類別串列之中  (OnCube) 
-
-
-
-
-
-                                
-                                
+                                 persons.Add(preson);  //加到people類別串列之中  (OnCube)                          
                             }
                             FileOutput.An_nan_print(persons, Path.GetFileNameWithoutExtension(file));//全部用完，用輸出的涵式去輸出                                                                              
                     }
@@ -89,7 +92,6 @@ namespace OnCube_Switch
                 }
                 catch(Exception ex)
                 {
-
                     Debug.WriteLine("讀檔失敗: " + ex.Message);
                     MoveFailFile(file);
                 }                                                        
@@ -97,14 +99,22 @@ namespace OnCube_Switch
             CK_fail();  //最後看所有Input資料夾之中有沒有檔案
         }
 
-        private string[] GetFiles()     //取得資料夾內CSV的檔案，存成字串陣列回傳
+
+        /// <summary>
+        /// 取得資料夾內CSV的檔案，存成字串陣列回傳
+        /// </summary>
+        /// <returns></returns>
+        private string[] GetFiles()     
         {
             string inPath = Settings.InputPath;      
             string[] files = Directory.GetFiles(inPath,"*.csv");   
             return files;
         }
 
-        private void  CK_fail() //取得資料夾內所有類型檔案，並移動到失敗資料夾
+        /// <summary>
+        /// 取得資料夾內所有類型檔案，並移動到失敗資料夾
+        /// </summary>
+        private void  CK_fail()
         {
             string sourepath = Settings.InputPath;
             string[] Failfile = Directory.GetFiles(sourepath);
@@ -119,8 +129,11 @@ namespace OnCube_Switch
             }
         }
 
-
-        private void MoveSuccessFile(string filepath) //成功檔案移動
+        /// <summary>
+        /// 成功檔案移動，引數Csv資料位址
+        /// </summary>
+        /// <param name="filepath"></param>
+        private void MoveSuccessFile(string filepath) 
         {
             DateTime now = DateTime.Now;
             string DateString = now.ToString("yyyyMMdd");
@@ -134,8 +147,11 @@ namespace OnCube_Switch
             File.Move(filepath, destinationFilePath);
         }
 
-
-        private void MoveFailFile(string filepath) //失敗檔案移動
+        /// <summary>
+        /// 失敗檔案移動，引數Csv資料位址
+        /// </summary>
+        /// <param name="filepath"></param>
+        private void MoveFailFile(string filepath) 
         {
             DateTime now = DateTime.Now;
             string DateString = now.ToString("yyyyMMdd");

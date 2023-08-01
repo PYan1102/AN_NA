@@ -4,69 +4,72 @@ namespace OnCube_Switch.Models
 {
     internal class CSVColumn
     {
-        /*
-         * 放安南醫院給的CSV檔案欄位
-         * 
-         * 主要給Text_conbine 用的Entity
-         * 串流讀一讀，用CsvHelper去分類這樣
-         * 用index去分
-         */
+        
+
+        /// <summary>
+        /// 放安南醫院給的CSV檔案欄位
+        /// 主要給Text_conbine 用的Entity
+        /// 串流讀一讀，用CsvHelper去分類這樣
+        /// 用index去分
+        /// </summary>
 
         private string patient_id = "";
         [Index(0)]
-        public string PatientID
+        public string PatientID        //"A"
         {
             get { return patient_id; }
             set { patient_id = value.Trim(); }
-        }                                         //"A"
+        }                                        
 
         private string name = "";
         [Index(1)]
-        public string Name                           //"B"
+        public string Name             //"B"
         {
             get { return name; }
             set { name = value.Trim(); }
         }
+
         private string hospnodisplay = "";
         [Index(2)]
-        public string HospNoDisplay                 //"C" 
+        public string HospNoDisplay    //"C" 
         {
             get { return hospnodisplay; }
             set { hospnodisplay = value.Trim(); }
         }
+
         private string hospno = "";
         [Index(3)]
-        public string HospNo                    //"D"
+        public string HospNo          //"D"
         {
             get { return hospno; }
             set { hospno = value.Trim(); }
         }
+
         private string date = "";
         [Index(4)]
-        public string Date                 //"E"
+        public string Date            //"E"
         {
             get { return date; }           set { date = value.Trim(); }
         }
 
         private string drugid = "";
         [Index(5)]
-        public string DrugID                //"F"
+        public string DrugID          //"F"
         {
             get { return drugid; }          set { drugid = value.Trim(); }
         }
 
         private string qmedicine = "";
         [Index(6)]
-        public string Qmedicine           //"G"
+        public string Qmedicine       //"G"
         {
             get { return qmedicine; }
             set { qmedicine = value.Trim(); }
-
         }
 
         private string qsource = "";
         [Index(7)]
-        public string Qsource                  //"H"
+        public string Qsource         //"H"
         {
             get { return qsource; }
             set { qsource = value.Trim(); }
@@ -74,7 +77,7 @@ namespace OnCube_Switch.Models
 
         private string qeffect = "";
         [Index(8)]
-        public string Qeffect               //"I"
+        public string Qeffect         //"I"
         {
             get { return qeffect; }
             set { qeffect = value.Trim(); }
@@ -82,15 +85,15 @@ namespace OnCube_Switch.Models
 
         private string qusage = "";
         [Index(9)]
-        public string Qusage               //"J"
+        public string Qusage          //"J"
         {
             get { return qusage; }
             set { qusage = value.Trim(); }
-
         }
+
         private string qdose = "";
         [Index(10)]
-        public string Qdose             //"K"
+        public string Qdose          //"K"
         {
             get { return qdose; }
             set { qdose = value.Trim(); }
@@ -114,7 +117,7 @@ namespace OnCube_Switch.Models
 
         private string qmedtime = "";
         [Index(13)]
-        public string Qmedtime              //"N"
+        public string Qmedtime        //"N"
         {
             get { return qmedtime; }
             set { qmedtime = value.Trim(); }
@@ -122,11 +125,10 @@ namespace OnCube_Switch.Models
 
         private string qmedday = "";
         [Index(14)]
-        public string Qmedday           //"O"
+        public string Qmedday         //"O"
         {
             get { return qmedday; }
             set { qmedday = value.Trim(); }
-
         }
 
         private string qfreq = "";
@@ -139,7 +141,7 @@ namespace OnCube_Switch.Models
 
         private string qmedfreq = "";
         [Index(16)]
-        public string Qmedfreq         //"Q"
+        public string Qmedfreq        //"Q"
         {
             get { return qmedfreq; }
             set { qmedfreq = value.Trim(); }
@@ -147,46 +149,44 @@ namespace OnCube_Switch.Models
 
         private string qstardate = "";
         [Index(17)]
-        public string Qstartdate           //"R"
+        public string Qstartdate      //"R"
         {
             get { return qstardate; }
             set { qstardate = value.Trim(); }
-
         }
 
         private string qenddate = "";
         [Index(18)]
-        public string Qenddate             //"S"
+        public string Qenddate        //"S"
         {
             get { return qenddate; }
             set { qenddate = value.Trim(); }        //藥品結束日期用/換成-
         }
+
         private string qtype = "";
         [Index(19)]
-        public string Qtype                //"T"
+        public string Qtype           //"T"
         {
             get { return qtype; }
             set { qtype = value.Trim(); }
-
         }
         private string qtypea = "";
         [Index(20)]
-        public string Qtypea                   //"U"
+        public string Qtypea          //"U"
         {
             get { return qtypea; }
             set { qtypea = value.Trim(); }
-
         }
         private string order = "";
         [Index(21)]
-        public string Order               //"V"
+        public string Order           //"V"
         {
             get { return order; }
             set { order = value.Trim(); }
         }
         private string qfiller = "";
         [Index(22)]                                                //第23行
-        public string Qfiller                //"W"
+        public string Qfiller         //"W"
         {
             get { return qfiller; }
             set { qfiller = value.Trim(); }

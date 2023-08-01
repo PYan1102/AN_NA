@@ -7,9 +7,15 @@ namespace OnCube_Switch
      * 創建一個txt檔案
      * 讀取存在OnCube暫存欄位的資料,依序依照邏輯輸出
      */
+
     internal class FileOutput
-    {        
-        public static void An_nan_print(List<OCS_Person> datas,string fileName)   //接收一個類別串列型別 ， 在此名為data
+    {
+        /// <summary>
+        /// 接收一個類別串列型別data和檔案字串位置
+        /// </summary>
+        /// <param name="datas"></param>
+        /// <param name="fileName"></param>
+        public static void An_nan_print(List<OCS_Person> datas,string fileName)   
         {
             var encoding = CodePagesEncodingProvider.Instance.GetEncoding("big5")!;
             string outputPath = $@"{Settings.OutputPath}/{fileName}_{DateTime.Now:ssfff}.txt";          //"文字檔案"名稱(用毫秒就不會重複了)
@@ -58,6 +64,13 @@ namespace OnCube_Switch
             }
             writer.Write(sb.ToString()); //用寫入流把串接的字串寫到新增的txt
         }        
+
+        /// <summary>
+        /// 接收中文字，需要補齊的長度
+        /// </summary>
+        /// <param name="chine"></param>
+        /// <param name="Length"></param>
+        /// <returns></returns>
         public static string ECD(string chine, int Length)  //處理中文
         {
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);

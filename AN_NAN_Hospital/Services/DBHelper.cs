@@ -85,6 +85,26 @@ namespace OnCube_Switch.Services
             }
         }
 
+        /// <summary>
+        /// 多載，需要查詢兩段程式時使用
+        /// </summary>
+        /// <param name="sql_1"></param>
+        /// <param name="sql_2"></param>
+        /// <returns></returns>
+        public static SqlDataReader SelectForReader(string sql_1, string sql_2)
+        {
+            var cmd = Cmd;
+            cmd.CommandText = sql_1 + sql_2;
+            try
+            {
+                return cmd.ExecuteReader(CommandBehavior.CloseConnection);
+            }
+            catch (Exception ex)
+            {
+                cmd.Connection.Close();
+                return null;
+            }
+        }
     }
 
 }

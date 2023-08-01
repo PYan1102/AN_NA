@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,7 +35,6 @@ namespace OnCube_Switch.Services
             dr.Close();
             return last_code;
         }
-
         /// <summary>
         /// 取得目前Item最後一筆"加一"的代碼
         /// </summary>
@@ -51,21 +51,18 @@ namespace OnCube_Switch.Services
             dr.Close();
             return last_RowCode;
         }
-
         /// <summary>
         /// 加入新的藥品名和新的代碼
         /// </summary>
         /// <param name="new_code"></param>
         /// <param name="newdrug"></param>
         /// <returns></returns>
-
         public void Insert_drug(string new_code, string newdrug)
         {
             var sql = $@"insert into Item (RawID, Mnemonic, CommercialName, GenericName , LastUpdatedBy) 
                        values({GetlastRowCode()}, '{new_code}', N'{newdrug}', N'{newdrug}', 2)";
             DBHelper.SelectForScalar(sql);
         }
-
         /// <summary>
         /// 讀Mnemonic
         /// 以及
@@ -88,7 +85,25 @@ namespace OnCube_Switch.Services
             return data;
 
         }
-
-
+        /// <summary>
+        /// 取得列的個數後+1
+        /// </summary>
+        public int Getrow()
+        {
+            int rowCount = 0;
+            var sql_1 = $"select Mnemonic,GenericName from item ;";
+            var sql_2 = $"SELECT @@ROWCOUNT";
+            var dr = DBHelper.SelectForReader(sql_1, sql_2);
+            if (dr.NextResult())
+            {
+                if (dr.Read())
+                {
+                    rowCount = Convert.ToInt32(dr[0]) + 1;
+                    Debug.WriteLine($"{rowCount}");
+                }
+            }
+            dr.Close();
+            return rowCount;
+        }
     }
 }
