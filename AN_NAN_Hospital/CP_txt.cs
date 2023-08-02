@@ -8,6 +8,10 @@ using System.Xml.Linq;
 
 namespace OnCube_Switch
 {
+
+    /// <summary>
+    /// 這是把CSV那個藥品輸出成TXT資料庫的  (更改方案，故目前不用)
+    /// </summary>
     internal class CP_txt
     {
         static Dictionary<string, string> data = new Dictionary<string, string>();

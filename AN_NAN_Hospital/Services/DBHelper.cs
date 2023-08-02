@@ -8,6 +8,11 @@ using System.Data.SqlClient;
 
 namespace OnCube_Switch.Services
 {
+
+
+    /// <summary>
+    /// 處理SSQL需要連結的東西
+    /// </summary>
     public class DBHelper
     {
         private static string ConnectionString = "server=TFMS-WS;database=OnCube;Integrated Security=True";  //uid=使用者名稱;pid=使用者密碼

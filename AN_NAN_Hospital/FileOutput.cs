@@ -3,11 +3,10 @@ using OnCube_Switch.Models;
 
 namespace OnCube_Switch
 {
-    /*
-     * 創建一個txt檔案
-     * 讀取存在OnCube暫存欄位的資料,依序依照邏輯輸出
-     */
-
+    /// <summary>
+    /// 創建一個txt檔案
+    /// 讀取存在OnCube類別成員串列暫存欄位的資料,依序依照邏輯輸出txt
+    /// </summary>
     internal class FileOutput
     {
         /// <summary>

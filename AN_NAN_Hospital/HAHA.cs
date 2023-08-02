@@ -7,6 +7,11 @@ using System.Threading.Tasks;
 
 namespace OnCube_Switch
 {
+
+
+    /// <summary>
+    /// 單純用來讀取藥品名稱測試用的
+    /// </summary>
     internal class HAHA
     {
         static bool y = false;
@@ -53,6 +58,10 @@ namespace OnCube_Switch
             }
         }
 
+
+        /// <summary>
+        /// 測試資料是否正確讀取
+        /// </summary>
         public void text()
         {
             add();

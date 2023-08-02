@@ -1,11 +1,11 @@
 ﻿namespace OnCube_Switch
 {
+    /// <summary>
+    /// OnCube字元限制個數，用常值整數int存
+    /// </summary>
+
     internal class OnCubeFormatLength
     {
-
-        /// <summary>
-        /// OnCube字元數個數
-        /// </summary>
 
         public const int Patient_Name = 20;
         public const int Patient_ID = 30;

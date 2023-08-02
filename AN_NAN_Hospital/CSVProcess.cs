@@ -9,11 +9,12 @@ using System.Text.RegularExpressions;
 
 namespace OnCube_Switch
 {
+    /// <summary>
+    /// 主要"安南醫院"讀取和寫入邏輯在這裡  
+    /// </summary>
     internal class CSVProcess
     {
-        /*
-         * 主要"安南醫院"讀取和寫入邏輯在這裡      
-         */
+        
 
         private CancellationTokenSource? _cts;
 
@@ -98,7 +99,6 @@ namespace OnCube_Switch
             }
             CK_fail();  //最後看所有Input資料夾之中有沒有檔案
         }
-
 
         /// <summary>
         /// 取得資料夾內CSV的檔案，存成字串陣列回傳

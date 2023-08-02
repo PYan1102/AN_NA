@@ -60,7 +60,7 @@ namespace OnCube_Switch.Services
         public void Insert_drug(string new_code, string newdrug)
         {
             var sql = $@"insert into Item (RawID, Mnemonic, CommercialName, GenericName , LastUpdatedBy) 
-                       values({GetlastRowCode()}, '{new_code}', N'{newdrug}', N'{newdrug}', 2)";
+                       values({Getrow()}, '{new_code}', N'{newdrug}', N'{newdrug}', 2)"; //Getrow() 0802改
             DBHelper.SelectForScalar(sql);
         }
         /// <summary>
@@ -86,7 +86,7 @@ namespace OnCube_Switch.Services
 
         }
         /// <summary>
-        /// 取得列的個數後+1
+        /// 取得列的個數後+1回傳
         /// </summary>
         public int Getrow()
         {

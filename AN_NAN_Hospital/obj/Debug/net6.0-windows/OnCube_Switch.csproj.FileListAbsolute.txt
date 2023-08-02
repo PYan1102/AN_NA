@@ -44,3 +44,9 @@ C:\Users\toolk\OneDrive\文件\GitHub\AN_NA\AN_NAN_Hospital\obj\Debug\net6.0-win
 C:\Users\toolk\OneDrive\文件\GitHub\AN_NA\AN_NAN_Hospital\obj\Debug\net6.0-windows\OnCube_Switch.pdb
 C:\Users\toolk\OneDrive\文件\GitHub\AN_NA\AN_NAN_Hospital\obj\Debug\net6.0-windows\OnCube_Switch.genruntimeconfig.cache
 C:\Users\toolk\OneDrive\文件\GitHub\AN_NA\AN_NAN_Hospital\obj\Debug\net6.0-windows\ref\OnCube_Switch.dll
+D:\Users\USER\Documents\GitHub\AN_NA\AN_NAN_Hospital\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
+D:\Users\USER\Documents\GitHub\AN_NA\AN_NAN_Hospital\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
+D:\Users\USER\Documents\GitHub\AN_NA\AN_NAN_Hospital\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
+D:\Users\USER\Documents\GitHub\AN_NA\AN_NAN_Hospital\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
+D:\Users\USER\Documents\GitHub\AN_NA\AN_NAN_Hospital\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Users\USER\Documents\GitHub\AN_NA\AN_NAN_Hospital\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll

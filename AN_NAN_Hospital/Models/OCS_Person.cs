@@ -7,21 +7,9 @@ using static OnCube_Switch.FileOutput;
 
 
 
-
-/*
- * 
- * 
- * 
- * define:這裡是放置OnCube的格子區
- * 
- * 
- * 輸入後都去掉頭尾空白
- * 
- * 
- * 
- * 
- */
-
+/// <summary>
+/// 放置OnCube成員，輸入後都去掉頭尾空白
+/// </summary>
 
 
 public class OCS_Person
