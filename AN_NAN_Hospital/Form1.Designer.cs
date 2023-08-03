@@ -44,7 +44,6 @@
             Compare_txt = new TextBox();
             openFileDialog = new OpenFileDialog();
             button1 = new Button();
-            button2 = new Button();
             SuspendLayout();
             // 
             // TB_CSV
@@ -196,22 +195,11 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // button2
-            // 
-            button2.Location = new Point(454, 416);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 15;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(9F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1015, 626);
-            Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(Compare_txt);
             Controls.Add(STOP_Btn);
@@ -255,6 +243,5 @@
         private TextBox Compare_txt;
         private OpenFileDialog openFileDialog;
         private Button button1;
-        private Button button2;
     }
 }

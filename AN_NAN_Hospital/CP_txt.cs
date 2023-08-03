@@ -10,13 +10,15 @@ namespace OnCube_Switch
 {
 
     /// <summary>
-    /// 這是把CSV那個藥品輸出成TXT資料庫的  (更改方案，故目前不用)
+    /// 這是把CSV那個藥品輸出成TXT資料庫的  (更改方案，故"目前不用")
     /// </summary>
     internal class CP_txt
     {
         static Dictionary<string, string> data = new Dictionary<string, string>();
         static bool Ifdo = false;
-
+        /// <summary>
+        /// 讀取txt檔案，存到一個字典串列中，使其成為一個資料庫
+        /// </summary>
         private void Read_txtDB()
         {
             string Txtfile = Settings.CP_Path;
@@ -31,7 +33,10 @@ namespace OnCube_Switch
             }
         }
 
-
+        /// <summary>
+        /// 創建(更新)一個txt檔，使他變成資料庫
+        /// </summary>
+        /// <param name="Newname"></param>
         private void CreatDB_txt(string Newname)
         {
             string Directory_txt = Settings.CP_Path;
@@ -57,7 +62,11 @@ namespace OnCube_Switch
             File.Move(Directory_txt, New_TxtPath);
         }
 
-      
+        /// <summary>
+        /// 接收一個字串，來比較資料庫是否有對應資料
+        /// </summary>
+        /// <param name="old_name"></param>
+        /// <returns></returns>
         public string Compare(string old_name)
         {
             bool Scan = false;
@@ -81,14 +90,6 @@ namespace OnCube_Switch
             } while (Scan);
             return "失敗";  //待修正
         }
-        //(int i = 0; i <= data.Count; i++)
-
-        /*
-         if (data == null || data.Count == 0||Ifdo==false)
-         {
-
-         }
-         */
     }
 
 }

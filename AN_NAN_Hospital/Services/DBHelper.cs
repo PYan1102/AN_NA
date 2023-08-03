@@ -11,11 +11,11 @@ namespace OnCube_Switch.Services
 
 
     /// <summary>
-    /// 處理SSQL需要連結的東西
+    /// 處理SSQL需要連結的東西(內部改連結使用者)
     /// </summary>
     public class DBHelper
     {
-        private static string ConnectionString = "server=TFMS-WS;database=OnCube;Integrated Security=True";  //uid=使用者名稱;pid=使用者密碼
+        private static string ConnectionString = "server=.;database=OnCube;uid=sa;pid=jvm5822511";  //uid=使用者名稱;pid=使用者密碼 or   Integrated Security=True
         /// <summary>
         /// 獲取連接對象
         /// </summary>

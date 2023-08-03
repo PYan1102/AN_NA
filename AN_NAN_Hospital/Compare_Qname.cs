@@ -50,11 +50,10 @@ namespace OnCube_Switch
         }
 
         /// <summary>
-        /// 比較SQL資料，引數字串
+        /// 匹配藥品名稱，回傳對應藥品代碼(主要匹配功能進入點)
         /// </summary>
         /// <param name="old_name"></param>
         /// <returns></returns>
-
         public string Compare(string old_name)
         {
             bool Scan = true;  //是否掃過SQL資料
