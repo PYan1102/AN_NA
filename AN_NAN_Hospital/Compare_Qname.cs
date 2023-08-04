@@ -68,7 +68,7 @@ namespace OnCube_Switch
                     {
                         restring = kvp.Key;
                         Scan = false;
-                        break;
+                        return restring;
                     }
                 }
 

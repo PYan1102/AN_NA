@@ -15,7 +15,7 @@ namespace OnCube_Switch.Services
     /// </summary>
     public class DBHelper
     {
-        private static string ConnectionString = "server=.;database=OnCube;uid=sa;pid=jvm5822511";  //uid=使用者名稱;pid=使用者密碼 or   Integrated Security=True
+        private static string ConnectionString = "server=.;database=OnCube;User ID=sa;Password=jvm5822511";  //uid=使用者名稱;pid=使用者密碼 or   Integrated Security=True
         /// <summary>
         /// 獲取連接對象
         /// </summary>

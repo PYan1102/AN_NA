@@ -62,7 +62,7 @@ namespace OnCube_Switch
                             List<OCS_Person> persons = new List<OCS_Person>();   //創一個Oncube 成員類別串列 
                             foreach (var record in records)  //把一個文件中，每一行(即成員)依序個別拿出
                             {
-                         //   Compare_Qname compare_Qname = new Compare_Qname();
+                                 Compare_Qname compare_Qname = new Compare_Qname();
 
                                 //過濾不設定的條件
                                 if (record.Qmedicine == "科學中藥" || !record.Qusage.EndsWith('#') || (record.Qway != "口服" && record.Qway != "PO"))
@@ -73,7 +73,7 @@ namespace OnCube_Switch
                                  qty = Convert.ToSingle(Regex.Replace(record.Qusage, @"\#", ""));  //正規表示式 (替換用)
                                  string adminCode = Regex.Replace(record.Qmedfreq, @"[\/]", "");   ////正規表示式  (替換用)
 
-                                 //string drug_id = compare_Qname.Compare(record.Qmedicine);
+                                 string drug_id = compare_Qname.Compare(record.Qmedicine);
 
                                  OCS_Person preson = new OCS_Person()
                                  {
@@ -81,7 +81,7 @@ namespace OnCube_Switch
                                         Patient_ID = record.PatientID.Replace(" ", ""),
                                         Patient_Location = "一般",
                                         Quantity = qty,
-                                        //Drug_Code = drug_id,
+                                        Drug_Code = drug_id,
                                         Medicine_Name = record.Qmedicine,
                                         Admin_Time = adminCode,           //adminCode,(因為有些沒定義，先用QD代替，之後需要再OnCube定義)
                                         StartDate = DateTimeConverter.ToDateTime(record.Qstartdate, "yyyy/M/d"),
